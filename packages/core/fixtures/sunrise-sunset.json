@@ -1,0 +1,941 @@
+{
+  "data": [
+    {
+      "date": "2026-01-15",
+      "site": "birgunj",
+      "sunrise": "2026-01-15T01:10:53Z",
+      "sunset": "2026-01-15T11:48:52Z"
+    },
+    {
+      "date": "2026-02-15",
+      "site": "birgunj",
+      "sunrise": "2026-02-15T00:56:57Z",
+      "sunset": "2026-02-15T12:12:30Z"
+    },
+    {
+      "date": "2026-03-15",
+      "site": "birgunj",
+      "sunrise": "2026-03-15T00:30:03Z",
+      "sunset": "2026-03-15T12:29:10Z"
+    },
+    {
+      "date": "2026-04-15",
+      "site": "birgunj",
+      "sunrise": "2026-04-14T23:56:37Z",
+      "sunset": "2026-04-15T12:44:52Z"
+    },
+    {
+      "date": "2026-05-15",
+      "site": "birgunj",
+      "sunrise": "2026-05-14T23:32:35Z",
+      "sunset": "2026-05-15T13:01:20Z"
+    },
+    {
+      "date": "2026-06-15",
+      "site": "birgunj",
+      "sunrise": "2026-06-14T23:25:46Z",
+      "sunset": "2026-06-15T13:16:09Z"
+    },
+    {
+      "date": "2026-07-15",
+      "site": "birgunj",
+      "sunrise": "2026-07-14T23:35:40Z",
+      "sunset": "2026-07-15T13:17:02Z"
+    },
+    {
+      "date": "2026-08-15",
+      "site": "birgunj",
+      "sunrise": "2026-08-14T23:51:33Z",
+      "sunset": "2026-08-15T12:58:07Z"
+    },
+    {
+      "date": "2026-09-15",
+      "site": "birgunj",
+      "sunrise": "2026-09-15T00:05:36Z",
+      "sunset": "2026-09-15T12:25:32Z"
+    },
+    {
+      "date": "2026-10-15",
+      "site": "birgunj",
+      "sunrise": "2026-10-15T00:19:44Z",
+      "sunset": "2026-10-15T11:52:31Z"
+    },
+    {
+      "date": "2026-11-15",
+      "site": "birgunj",
+      "sunrise": "2026-11-15T00:39:54Z",
+      "sunset": "2026-11-15T11:29:53Z"
+    },
+    {
+      "date": "2026-12-15",
+      "site": "birgunj",
+      "sunrise": "2026-12-15T01:01:35Z",
+      "sunset": "2026-12-15T11:29:19Z"
+    },
+    {
+      "date": "2026-03-20",
+      "site": "birgunj",
+      "sunrise": "2026-03-20T00:24:36Z",
+      "sunset": "2026-03-20T12:31:46Z"
+    },
+    {
+      "date": "2026-06-21",
+      "site": "birgunj",
+      "sunrise": "2026-06-20T23:26:43Z",
+      "sunset": "2026-06-21T13:17:45Z"
+    },
+    {
+      "date": "2026-09-23",
+      "site": "birgunj",
+      "sunrise": "2026-09-23T00:09:05Z",
+      "sunset": "2026-09-23T12:16:22Z"
+    },
+    {
+      "date": "2026-12-21",
+      "site": "birgunj",
+      "sunrise": "2026-12-21T01:04:58Z",
+      "sunset": "2026-12-21T11:31:52Z"
+    },
+    {
+      "date": "2026-01-01",
+      "site": "birgunj",
+      "sunrise": "2026-01-01T01:09:27Z",
+      "sunset": "2026-01-01T11:38:29Z"
+    },
+    {
+      "date": "2026-02-01",
+      "site": "birgunj",
+      "sunrise": "2026-02-01T01:05:58Z",
+      "sunset": "2026-02-01T12:02:18Z"
+    },
+    {
+      "date": "2026-04-01",
+      "site": "birgunj",
+      "sunrise": "2026-04-01T00:11:23Z",
+      "sunset": "2026-04-01T12:37:47Z"
+    },
+    {
+      "date": "2026-05-01",
+      "site": "birgunj",
+      "sunrise": "2026-04-30T23:42:04Z",
+      "sunset": "2026-05-01T12:53:27Z"
+    },
+    {
+      "date": "2026-10-01",
+      "site": "birgunj",
+      "sunrise": "2026-10-01T00:12:42Z",
+      "sunset": "2026-10-01T12:07:19Z"
+    },
+    {
+      "date": "2026-11-15",
+      "site": "birgunj",
+      "sunrise": "2026-11-15T00:39:54Z",
+      "sunset": "2026-11-15T11:29:53Z"
+    },
+    {
+      "date": "2026-12-01",
+      "site": "birgunj",
+      "sunrise": "2026-12-01T00:51:57Z",
+      "sunset": "2026-12-01T11:26:39Z"
+    },
+    {
+      "date": "2026-07-02",
+      "site": "birgunj",
+      "sunrise": "2026-07-01T23:29:59Z",
+      "sunset": "2026-07-02T13:18:56Z"
+    },
+    {
+      "date": "1900-06-21",
+      "site": "birgunj",
+      "sunrise": "1900-06-20T23:26:18Z",
+      "sunset": "1900-06-21T13:17:23Z"
+    },
+    {
+      "date": "1950-01-15",
+      "site": "birgunj",
+      "sunrise": "1950-01-15T01:11:08Z",
+      "sunset": "1950-01-15T11:48:36Z"
+    },
+    {
+      "date": "1993-08-18",
+      "site": "birgunj",
+      "sunrise": "1993-08-17T23:52:56Z",
+      "sunset": "1993-08-18T12:55:20Z"
+    },
+    {
+      "date": "2000-03-20",
+      "site": "birgunj",
+      "sunrise": "2000-03-20T00:24:18Z",
+      "sunset": "2000-03-20T12:31:57Z"
+    },
+    {
+      "date": "2075-12-21",
+      "site": "birgunj",
+      "sunrise": "2075-12-21T01:04:53Z",
+      "sunset": "2075-12-21T11:31:50Z"
+    },
+    {
+      "date": "2100-06-21",
+      "site": "birgunj",
+      "sunrise": "2100-06-20T23:26:56Z",
+      "sunset": "2100-06-21T13:17:55Z"
+    },
+    {
+      "date": "2026-01-15",
+      "site": "kathmandu",
+      "sunrise": "2026-01-15T01:10:30Z",
+      "sunset": "2026-01-15T11:45:44Z"
+    },
+    {
+      "date": "2026-02-15",
+      "site": "kathmandu",
+      "sunrise": "2026-02-15T00:55:59Z",
+      "sunset": "2026-02-15T12:09:57Z"
+    },
+    {
+      "date": "2026-03-15",
+      "site": "kathmandu",
+      "sunrise": "2026-03-15T00:28:24Z",
+      "sunset": "2026-03-15T12:27:18Z"
+    },
+    {
+      "date": "2026-04-15",
+      "site": "kathmandu",
+      "sunrise": "2026-04-14T23:54:12Z",
+      "sunset": "2026-04-15T12:43:45Z"
+    },
+    {
+      "date": "2026-05-15",
+      "site": "kathmandu",
+      "sunrise": "2026-05-14T23:29:33Z",
+      "sunset": "2026-05-15T13:00:51Z"
+    },
+    {
+      "date": "2026-06-15",
+      "site": "kathmandu",
+      "sunrise": "2026-06-14T23:22:22Z",
+      "sunset": "2026-06-15T13:16:00Z"
+    },
+    {
+      "date": "2026-07-15",
+      "site": "kathmandu",
+      "sunrise": "2026-07-14T23:32:25Z",
+      "sunset": "2026-07-15T13:16:45Z"
+    },
+    {
+      "date": "2026-08-15",
+      "site": "kathmandu",
+      "sunrise": "2026-08-14T23:48:51Z",
+      "sunset": "2026-08-15T12:57:17Z"
+    },
+    {
+      "date": "2026-09-15",
+      "site": "kathmandu",
+      "sunrise": "2026-09-15T00:03:37Z",
+      "sunset": "2026-09-15T12:23:59Z"
+    },
+    {
+      "date": "2026-10-15",
+      "site": "kathmandu",
+      "sunrise": "2026-10-15T00:18:29Z",
+      "sunset": "2026-10-15T11:50:14Z"
+    },
+    {
+      "date": "2026-11-15",
+      "site": "kathmandu",
+      "sunrise": "2026-11-15T00:39:19Z",
+      "sunset": "2026-11-15T11:26:56Z"
+    },
+    {
+      "date": "2026-12-15",
+      "site": "kathmandu",
+      "sunrise": "2026-12-15T01:01:22Z",
+      "sunset": "2026-12-15T11:26:00Z"
+    },
+    {
+      "date": "2026-03-20",
+      "site": "kathmandu",
+      "sunrise": "2026-03-20T00:22:49Z",
+      "sunset": "2026-03-20T12:30:01Z"
+    },
+    {
+      "date": "2026-06-21",
+      "site": "kathmandu",
+      "sunrise": "2026-06-20T23:23:19Z",
+      "sunset": "2026-06-21T13:17:37Z"
+    },
+    {
+      "date": "2026-09-23",
+      "site": "kathmandu",
+      "sunrise": "2026-09-23T00:07:18Z",
+      "sunset": "2026-09-23T12:14:37Z"
+    },
+    {
+      "date": "2026-12-21",
+      "site": "kathmandu",
+      "sunrise": "2026-12-21T01:04:45Z",
+      "sunset": "2026-12-21T11:28:33Z"
+    },
+    {
+      "date": "2026-01-01",
+      "site": "kathmandu",
+      "sunrise": "2026-01-01T01:09:13Z",
+      "sunset": "2026-01-01T11:35:12Z"
+    },
+    {
+      "date": "2026-02-01",
+      "site": "kathmandu",
+      "sunrise": "2026-02-01T01:05:17Z",
+      "sunset": "2026-02-01T11:59:27Z"
+    },
+    {
+      "date": "2026-04-01",
+      "site": "kathmandu",
+      "sunrise": "2026-04-01T00:09:18Z",
+      "sunset": "2026-04-01T12:36:20Z"
+    },
+    {
+      "date": "2026-05-01",
+      "site": "kathmandu",
+      "sunrise": "2026-04-30T23:39:19Z",
+      "sunset": "2026-05-01T12:52:42Z"
+    },
+    {
+      "date": "2026-10-01",
+      "site": "kathmandu",
+      "sunrise": "2026-10-01T00:11:06Z",
+      "sunset": "2026-10-01T12:05:22Z"
+    },
+    {
+      "date": "2026-11-15",
+      "site": "kathmandu",
+      "sunrise": "2026-11-15T00:39:19Z",
+      "sunset": "2026-11-15T11:26:56Z"
+    },
+    {
+      "date": "2026-12-01",
+      "site": "kathmandu",
+      "sunrise": "2026-12-01T00:51:37Z",
+      "sunset": "2026-12-01T11:23:27Z"
+    },
+    {
+      "date": "2026-07-02",
+      "site": "kathmandu",
+      "sunrise": "2026-07-01T23:26:37Z",
+      "sunset": "2026-07-02T13:18:46Z"
+    },
+    {
+      "date": "1900-06-21",
+      "site": "kathmandu",
+      "sunrise": "1900-06-20T23:22:54Z",
+      "sunset": "1900-06-21T13:17:15Z"
+    },
+    {
+      "date": "1950-01-15",
+      "site": "kathmandu",
+      "sunrise": "1950-01-15T01:10:45Z",
+      "sunset": "1950-01-15T11:45:27Z"
+    },
+    {
+      "date": "1993-08-18",
+      "site": "kathmandu",
+      "sunrise": "1993-08-17T23:50:18Z",
+      "sunset": "1993-08-18T12:54:26Z"
+    },
+    {
+      "date": "2000-03-20",
+      "site": "kathmandu",
+      "sunrise": "2000-03-20T00:22:31Z",
+      "sunset": "2000-03-20T12:30:13Z"
+    },
+    {
+      "date": "2075-12-21",
+      "site": "kathmandu",
+      "sunrise": "2075-12-21T01:04:41Z",
+      "sunset": "2075-12-21T11:28:30Z"
+    },
+    {
+      "date": "2100-06-21",
+      "site": "kathmandu",
+      "sunrise": "2100-06-20T23:23:32Z",
+      "sunset": "2100-06-21T13:17:47Z"
+    },
+    {
+      "date": "2026-01-15",
+      "site": "singapore",
+      "sunrise": "2026-01-14T23:12:14Z",
+      "sunset": "2026-01-15T11:15:48Z"
+    },
+    {
+      "date": "2026-02-15",
+      "site": "singapore",
+      "sunrise": "2026-02-14T23:16:26Z",
+      "sunset": "2026-02-15T11:21:12Z"
+    },
+    {
+      "date": "2026-03-15",
+      "site": "singapore",
+      "sunrise": "2026-03-14T23:10:26Z",
+      "sunset": "2026-03-15T11:16:56Z"
+    },
+    {
+      "date": "2026-04-15",
+      "site": "singapore",
+      "sunrise": "2026-04-14T23:00:23Z",
+      "sunset": "2026-04-15T11:09:14Z"
+    },
+    {
+      "date": "2026-05-15",
+      "site": "singapore",
+      "sunrise": "2026-05-14T22:55:31Z",
+      "sunset": "2026-05-15T11:06:36Z"
+    },
+    {
+      "date": "2026-06-15",
+      "site": "singapore",
+      "sunrise": "2026-06-14T22:58:59Z",
+      "sunset": "2026-06-15T11:11:21Z"
+    },
+    {
+      "date": "2026-07-15",
+      "site": "singapore",
+      "sunrise": "2026-07-14T23:04:47Z",
+      "sunset": "2026-07-15T11:16:37Z"
+    },
+    {
+      "date": "2026-08-15",
+      "site": "singapore",
+      "sunrise": "2026-08-14T23:04:22Z",
+      "sunset": "2026-08-15T11:14:11Z"
+    },
+    {
+      "date": "2026-09-15",
+      "site": "singapore",
+      "sunrise": "2026-09-14T22:56:20Z",
+      "sunset": "2026-09-15T11:03:44Z"
+    },
+    {
+      "date": "2026-10-15",
+      "site": "singapore",
+      "sunrise": "2026-10-14T22:47:53Z",
+      "sunset": "2026-10-15T10:53:15Z"
+    },
+    {
+      "date": "2026-11-15",
+      "site": "singapore",
+      "sunrise": "2026-11-14T22:47:19Z",
+      "sunset": "2026-11-15T10:51:12Z"
+    },
+    {
+      "date": "2026-12-15",
+      "site": "singapore",
+      "sunrise": "2026-12-14T22:58:04Z",
+      "sunset": "2026-12-15T11:01:20Z"
+    },
+    {
+      "date": "2026-03-20",
+      "site": "singapore",
+      "sunrise": "2026-03-19T23:08:50Z",
+      "sunset": "2026-03-20T11:15:40Z"
+    },
+    {
+      "date": "2026-06-21",
+      "site": "singapore",
+      "sunrise": "2026-06-20T23:00:16Z",
+      "sunset": "2026-06-21T11:12:41Z"
+    },
+    {
+      "date": "2026-09-23",
+      "site": "singapore",
+      "sunrise": "2026-09-22T22:53:47Z",
+      "sunset": "2026-09-23T11:00:36Z"
+    },
+    {
+      "date": "2026-12-21",
+      "site": "singapore",
+      "sunrise": "2026-12-20T23:01:01Z",
+      "sunset": "2026-12-21T11:04:16Z"
+    },
+    {
+      "date": "2026-01-01",
+      "site": "singapore",
+      "sunrise": "2025-12-31T23:06:30Z",
+      "sunset": "2026-01-01T11:09:48Z"
+    },
+    {
+      "date": "2026-02-01",
+      "site": "singapore",
+      "sunrise": "2026-01-31T23:16:11Z",
+      "sunset": "2026-02-01T11:20:17Z"
+    },
+    {
+      "date": "2026-04-01",
+      "site": "singapore",
+      "sunrise": "2026-03-31T23:04:47Z",
+      "sunset": "2026-04-01T11:12:31Z"
+    },
+    {
+      "date": "2026-05-01",
+      "site": "singapore",
+      "sunrise": "2026-04-30T22:56:48Z",
+      "sunset": "2026-05-01T11:06:54Z"
+    },
+    {
+      "date": "2026-10-01",
+      "site": "singapore",
+      "sunrise": "2026-09-30T22:51:20Z",
+      "sunset": "2026-10-01T10:57:35Z"
+    },
+    {
+      "date": "2026-11-15",
+      "site": "singapore",
+      "sunrise": "2026-11-14T22:47:19Z",
+      "sunset": "2026-11-15T10:51:12Z"
+    },
+    {
+      "date": "2026-12-01",
+      "site": "singapore",
+      "sunrise": "2026-11-30T22:51:54Z",
+      "sunset": "2026-12-01T10:55:20Z"
+    },
+    {
+      "date": "2026-07-02",
+      "site": "singapore",
+      "sunrise": "2026-07-01T23:02:36Z",
+      "sunset": "2026-07-02T11:14:53Z"
+    },
+    {
+      "date": "1900-06-21",
+      "site": "singapore",
+      "sunrise": "1900-06-20T22:59:52Z",
+      "sunset": "1900-06-21T11:12:17Z"
+    },
+    {
+      "date": "1950-01-15",
+      "site": "singapore",
+      "sunrise": "1950-01-14T23:12:14Z",
+      "sunset": "1950-01-15T11:15:46Z"
+    },
+    {
+      "date": "1993-08-18",
+      "site": "singapore",
+      "sunrise": "1993-08-17T23:03:48Z",
+      "sunset": "1993-08-18T11:13:22Z"
+    },
+    {
+      "date": "2000-03-20",
+      "site": "singapore",
+      "sunrise": "2000-03-19T23:08:46Z",
+      "sunset": "2000-03-20T11:15:37Z"
+    },
+    {
+      "date": "2075-12-21",
+      "site": "singapore",
+      "sunrise": "2075-12-20T23:00:58Z",
+      "sunset": "2075-12-21T11:04:12Z"
+    },
+    {
+      "date": "2100-06-21",
+      "site": "singapore",
+      "sunrise": "2100-06-20T23:00:28Z",
+      "sunset": "2100-06-21T11:12:52Z"
+    },
+    {
+      "date": "2026-01-15",
+      "site": "helsinki",
+      "sunrise": "2026-01-15T07:08:45Z",
+      "sunset": "2026-01-15T13:51:02Z"
+    },
+    {
+      "date": "2026-02-15",
+      "site": "helsinki",
+      "sunrise": "2026-02-15T05:58:47Z",
+      "sunset": "2026-02-15T15:10:53Z"
+    },
+    {
+      "date": "2026-03-15",
+      "site": "helsinki",
+      "sunrise": "2026-03-15T04:37:07Z",
+      "sunset": "2026-03-15T16:22:31Z"
+    },
+    {
+      "date": "2026-04-15",
+      "site": "helsinki",
+      "sunrise": "2026-04-15T03:03:09Z",
+      "sunset": "2026-04-15T17:39:03Z"
+    },
+    {
+      "date": "2026-05-15",
+      "site": "helsinki",
+      "sunrise": "2026-05-15T01:41:11Z",
+      "sunset": "2026-05-15T18:53:41Z"
+    },
+    {
+      "date": "2026-06-15",
+      "site": "helsinki",
+      "sunrise": "2026-06-15T00:53:59Z",
+      "sunset": "2026-06-15T19:47:55Z"
+    },
+    {
+      "date": "2026-07-15",
+      "site": "helsinki",
+      "sunrise": "2026-07-15T01:21:33Z",
+      "sunset": "2026-07-15T19:29:33Z"
+    },
+    {
+      "date": "2026-08-15",
+      "site": "helsinki",
+      "sunrise": "2026-08-15T02:33:00Z",
+      "sunset": "2026-08-15T18:14:48Z"
+    },
+    {
+      "date": "2026-09-15",
+      "site": "helsinki",
+      "sunrise": "2026-09-15T03:47:15Z",
+      "sunset": "2026-09-15T16:42:16Z"
+    },
+    {
+      "date": "2026-10-15",
+      "site": "helsinki",
+      "sunrise": "2026-10-15T04:59:18Z",
+      "sunset": "2026-10-15T15:11:39Z"
+    },
+    {
+      "date": "2026-11-15",
+      "site": "helsinki",
+      "sunrise": "2026-11-15T06:18:30Z",
+      "sunset": "2026-11-15T13:50:25Z"
+    },
+    {
+      "date": "2026-12-15",
+      "site": "helsinki",
+      "sunrise": "2026-12-15T07:18:17Z",
+      "sunset": "2026-12-15T13:12:15Z"
+    },
+    {
+      "date": "2026-03-20",
+      "site": "helsinki",
+      "sunrise": "2026-03-20T04:21:55Z",
+      "sunset": "2026-03-20T16:34:54Z"
+    },
+    {
+      "date": "2026-06-21",
+      "site": "helsinki",
+      "sunrise": "2026-06-21T00:53:27Z",
+      "sunset": "2026-06-21T19:50:39Z"
+    },
+    {
+      "date": "2026-09-23",
+      "site": "helsinki",
+      "sunrise": "2026-09-23T04:06:09Z",
+      "sunset": "2026-09-23T16:17:46Z"
+    },
+    {
+      "date": "2026-12-21",
+      "site": "helsinki",
+      "sunrise": "2026-12-21T07:23:12Z",
+      "sunset": "2026-12-21T13:13:21Z"
+    },
+    {
+      "date": "2026-01-01",
+      "site": "helsinki",
+      "sunrise": "2026-01-01T07:23:30Z",
+      "sunset": "2026-01-01T13:24:19Z"
+    },
+    {
+      "date": "2026-02-01",
+      "site": "helsinki",
+      "sunrise": "2026-02-01T06:34:42Z",
+      "sunset": "2026-02-01T14:33:42Z"
+    },
+    {
+      "date": "2026-04-01",
+      "site": "helsinki",
+      "sunrise": "2026-04-01T03:45:19Z",
+      "sunset": "2026-04-01T17:04:24Z"
+    },
+    {
+      "date": "2026-05-01",
+      "site": "helsinki",
+      "sunrise": "2026-05-01T02:17:14Z",
+      "sunset": "2026-05-01T18:19:11Z"
+    },
+    {
+      "date": "2026-10-01",
+      "site": "helsinki",
+      "sunrise": "2026-10-01T04:25:10Z",
+      "sunset": "2026-10-01T15:53:23Z"
+    },
+    {
+      "date": "2026-11-15",
+      "site": "helsinki",
+      "sunrise": "2026-11-15T06:18:30Z",
+      "sunset": "2026-11-15T13:50:25Z"
+    },
+    {
+      "date": "2026-12-01",
+      "site": "helsinki",
+      "sunrise": "2026-12-01T06:55:48Z",
+      "sunset": "2026-12-01T13:22:12Z"
+    },
+    {
+      "date": "2026-07-02",
+      "site": "helsinki",
+      "sunrise": "2026-07-02T01:00:58Z",
+      "sunset": "2026-07-02T19:46:54Z"
+    },
+    {
+      "date": "1900-06-21",
+      "site": "helsinki",
+      "sunrise": "1900-06-21T00:52:54Z",
+      "sunset": "1900-06-21T19:50:26Z"
+    },
+    {
+      "date": "1950-01-15",
+      "site": "helsinki",
+      "sunrise": "1950-01-15T07:09:52Z",
+      "sunset": "1950-01-15T13:49:52Z"
+    },
+    {
+      "date": "1993-08-18",
+      "site": "helsinki",
+      "sunrise": "1993-08-18T02:40:11Z",
+      "sunset": "1993-08-18T18:06:15Z"
+    },
+    {
+      "date": "2000-03-20",
+      "site": "helsinki",
+      "sunrise": "2000-03-20T04:21:02Z",
+      "sunset": "2000-03-20T16:35:40Z"
+    },
+    {
+      "date": "2075-12-21",
+      "site": "helsinki",
+      "sunrise": "2075-12-21T07:23:03Z",
+      "sunset": "2075-12-21T13:13:23Z"
+    },
+    {
+      "date": "2100-06-21",
+      "site": "helsinki",
+      "sunrise": "2100-06-21T00:53:46Z",
+      "sunset": "2100-06-21T19:50:42Z"
+    },
+    {
+      "date": "2026-01-15",
+      "site": "utqiagvik",
+      "sunrise": "always_down",
+      "sunset": "always_down"
+    },
+    {
+      "date": "2026-02-15",
+      "site": "utqiagvik",
+      "sunrise": "2026-02-15T19:09:54Z",
+      "sunset": "2026-02-16T02:14:05Z"
+    },
+    {
+      "date": "2026-03-15",
+      "site": "utqiagvik",
+      "sunrise": "2026-03-15T16:48:00Z",
+      "sunset": "2026-03-16T04:26:05Z"
+    },
+    {
+      "date": "2026-04-15",
+      "site": "utqiagvik",
+      "sunrise": "2026-04-15T14:09:50Z",
+      "sunset": "2026-04-16T06:47:56Z"
+    },
+    {
+      "date": "2026-05-15",
+      "site": "utqiagvik",
+      "sunrise": "always_up",
+      "sunset": "always_up"
+    },
+    {
+      "date": "2026-06-15",
+      "site": "utqiagvik",
+      "sunrise": "always_up",
+      "sunset": "always_up"
+    },
+    {
+      "date": "2026-07-15",
+      "site": "utqiagvik",
+      "sunrise": "always_up",
+      "sunset": "always_up"
+    },
+    {
+      "date": "2026-08-15",
+      "site": "utqiagvik",
+      "sunrise": "2026-08-15T13:06:00Z",
+      "sunset": "2026-08-16T07:52:15Z"
+    },
+    {
+      "date": "2026-09-15",
+      "site": "utqiagvik",
+      "sunrise": "2026-09-15T15:37:26Z",
+      "sunset": "2026-09-16T05:04:24Z"
+    },
+    {
+      "date": "2026-10-15",
+      "site": "utqiagvik",
+      "sunrise": "2026-10-15T17:48:17Z",
+      "sunset": "2026-10-16T02:35:37Z"
+    },
+    {
+      "date": "2026-11-15",
+      "site": "utqiagvik",
+      "sunrise": "2026-11-15T20:56:11Z",
+      "sunset": "2026-11-15T23:26:23Z"
+    },
+    {
+      "date": "2026-12-15",
+      "site": "utqiagvik",
+      "sunrise": "always_down",
+      "sunset": "always_down"
+    },
+    {
+      "date": "2026-03-20",
+      "site": "utqiagvik",
+      "sunrise": "2026-03-20T16:23:16Z",
+      "sunset": "2026-03-21T04:48:04Z"
+    },
+    {
+      "date": "2026-06-21",
+      "site": "utqiagvik",
+      "sunrise": "always_up",
+      "sunset": "always_up"
+    },
+    {
+      "date": "2026-09-23",
+      "site": "utqiagvik",
+      "sunrise": "2026-09-23T16:11:38Z",
+      "sunset": "2026-09-24T04:24:47Z"
+    },
+    {
+      "date": "2026-12-21",
+      "site": "utqiagvik",
+      "sunrise": "always_down",
+      "sunset": "always_down"
+    },
+    {
+      "date": "2026-01-01",
+      "site": "utqiagvik",
+      "sunrise": "always_down",
+      "sunset": "always_down"
+    },
+    {
+      "date": "2026-02-01",
+      "site": "utqiagvik",
+      "sunrise": "2026-02-01T20:32:39Z",
+      "sunset": "2026-02-02T00:50:06Z"
+    },
+    {
+      "date": "2026-04-01",
+      "site": "utqiagvik",
+      "sunrise": "2026-04-01T15:23:16Z",
+      "sunset": "2026-04-02T05:41:19Z"
+    },
+    {
+      "date": "2026-05-01",
+      "site": "utqiagvik",
+      "sunrise": "2026-05-01T12:31:21Z",
+      "sunset": "2026-05-01T08:15:51Z"
+    },
+    {
+      "date": "2026-10-01",
+      "site": "utqiagvik",
+      "sunrise": "2026-10-01T16:45:51Z",
+      "sunset": "2026-10-02T03:45:23Z"
+    },
+    {
+      "date": "2026-11-15",
+      "site": "utqiagvik",
+      "sunrise": "2026-11-15T20:56:11Z",
+      "sunset": "2026-11-15T23:26:23Z"
+    },
+    {
+      "date": "2026-12-01",
+      "site": "utqiagvik",
+      "sunrise": "always_down",
+      "sunset": "always_down"
+    },
+    {
+      "date": "2026-07-02",
+      "site": "utqiagvik",
+      "sunrise": "always_up",
+      "sunset": "always_up"
+    },
+    {
+      "date": "1900-06-21",
+      "site": "utqiagvik",
+      "sunrise": "always_up",
+      "sunset": "always_up"
+    },
+    {
+      "date": "1950-01-15",
+      "site": "utqiagvik",
+      "sunrise": "always_down",
+      "sunset": "always_down"
+    },
+    {
+      "date": "1993-08-18",
+      "site": "utqiagvik",
+      "sunrise": "1993-08-18T13:23:32Z",
+      "sunset": "1993-08-19T07:33:45Z"
+    },
+    {
+      "date": "2000-03-20",
+      "site": "utqiagvik",
+      "sunrise": "2000-03-20T16:21:49Z",
+      "sunset": "2000-03-21T04:49:24Z"
+    },
+    {
+      "date": "2075-12-21",
+      "site": "utqiagvik",
+      "sunrise": "always_down",
+      "sunset": "always_down"
+    },
+    {
+      "date": "2100-06-21",
+      "site": "utqiagvik",
+      "sunrise": "always_up",
+      "sunset": "always_up"
+    }
+  ],
+  "parameters": {
+    "convention": "upper limb, standard refraction (h0 ≈ -0.8333°)",
+    "dates": "per-site LOCAL calendar dates; times in UTC",
+    "sites": [
+      {
+        "lat": 27.0104,
+        "lon": 84.8821,
+        "name": "birgunj",
+        "tz": "Asia/Kathmandu"
+      },
+      {
+        "lat": 27.7172,
+        "lon": 85.324,
+        "name": "kathmandu",
+        "tz": "Asia/Kathmandu"
+      },
+      {
+        "lat": 1.3521,
+        "lon": 103.8198,
+        "name": "singapore",
+        "tz": "Asia/Singapore"
+      },
+      {
+        "lat": 60.1699,
+        "lon": 24.9384,
+        "name": "helsinki",
+        "tz": "Europe/Helsinki"
+      },
+      {
+        "lat": 71.2906,
+        "lon": -156.7886,
+        "name": "utqiagvik",
+        "tz": "America/Anchorage"
+      }
+    ]
+  },
+  "source": "swisseph-2.10.03 (pyswisseph 2.10.3.2), moshier, Lahiri, mean node"
+}

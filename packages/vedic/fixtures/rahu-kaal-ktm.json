@@ -1,0 +1,30 @@
+{
+  "data": {
+    "expected": {
+      "endNpt": "15:35",
+      "segment": 6,
+      "startNpt": "13:51"
+    },
+    "sunriseUtc": "2026-07-01T23:26:37Z",
+    "sunsetUtc": "2026-07-02T13:18:46Z",
+    "weekdaySegment": {
+      "fri": 4,
+      "mon": 2,
+      "sat": 3,
+      "sun": 8,
+      "thu": 6,
+      "tue": 7,
+      "wed": 5
+    }
+  },
+  "parameters": {
+    "date": "2026-07-02 (Thursday) local Asia/Kathmandu",
+    "site": {
+      "lat": 27.7172,
+      "lon": 85.324,
+      "name": "kathmandu",
+      "tz": "Asia/Kathmandu"
+    }
+  },
+  "source": "swisseph-2.10.03 (pyswisseph 2.10.3.2), moshier, Lahiri, mean node"
+}

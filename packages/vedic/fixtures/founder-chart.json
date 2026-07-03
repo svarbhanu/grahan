@@ -1,0 +1,47 @@
+{
+  "data": {
+    "ayanamsa": 23.768087,
+    "bodiesSidereal": {
+      "jupiter": 168.816526,
+      "mars": 160.131077,
+      "mercury": 110.169263,
+      "moon": 127.212685,
+      "rahu": 224.519578,
+      "saturn": 303.319327,
+      "sun": 121.512899,
+      "venus": 85.096277
+    },
+    "elements": {
+      "ayanamsa": 23.768087,
+      "jdUt": 2449217.71875,
+      "karanaSlot": 0,
+      "moonSidereal": 127.212685,
+      "moonTropical": 150.980773,
+      "nakshatraIndex": 9,
+      "pada": 3,
+      "sunSidereal": 121.512899,
+      "sunTropical": 145.280987,
+      "tithiIndex": 0,
+      "utc": "1993-08-18T05:15:00Z",
+      "yogaIndex": 18
+    },
+    "lagnaSidereal": 191.783966,
+    "retrograde": {
+      "jupiter": false,
+      "mars": false,
+      "mercury": false,
+      "saturn": true,
+      "venus": false
+    }
+  },
+  "parameters": {
+    "jdUt": 2449217.71875,
+    "place": {
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "name": "Birgunj, Nepal"
+    },
+    "utc": "1993-08-18T05:15:00Z"
+  },
+  "source": "swisseph-2.10.03 (pyswisseph 2.10.3.2), moshier, Lahiri, mean node"
+}

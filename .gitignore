@@ -1,5 +1,7 @@
 node_modules/
 .claude/settings.local.json
+scripts/.venv/
+__pycache__/
 dist/
 coverage/
 *.tsbuildinfo
