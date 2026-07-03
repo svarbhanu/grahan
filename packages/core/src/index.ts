@@ -1,13 +1,13 @@
 /**
  * @grahan/core — astronomy-grade sky calculations.
  *
- * Placeholder export proving the toolchain end to end; the real modules
- * (julian day, ΔT, sun/moon positions, sunrise/sunset) arrive in M1–M4.
- *
- * @example
- * ```ts
- * import { CORE_VERSION } from '@grahan/core';
- * console.log(CORE_VERSION); // "0.0.0"
- * ```
+ * All internal math runs on UTC Julian days; IANA timezone helpers exist
+ * only at the API boundary. Zero runtime dependencies.
  */
+
 export const CORE_VERSION = '0.0.0';
+
+export * from './math/angles.js';
+export * from './time/julian.js';
+export * from './time/deltaT.js';
+export * from './time/timezone.js';
