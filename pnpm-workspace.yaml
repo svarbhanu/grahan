@@ -1,0 +1,7 @@
+packages:
+  - packages/*
+
+# pnpm blocks dependency install scripts unless allowlisted; esbuild
+# (vitest's transpiler) needs its script to place the platform binary.
+onlyBuiltDependencies:
+  - esbuild

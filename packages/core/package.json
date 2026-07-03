@@ -1,0 +1,48 @@
+{
+  "name": "@grahan/core",
+  "version": "0.0.0",
+  "description": "Astronomy-grade sky calculations: Julian day, ΔT, sun/moon positions, sunrise/sunset, sidereal time, moon phases. Zero dependencies.",
+  "license": "MIT",
+  "author": "Svarbhanu Neel",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svarbhanu/grahan.git",
+    "directory": "packages/core"
+  },
+  "keywords": [
+    "astronomy",
+    "ephemeris",
+    "sun",
+    "moon",
+    "sunrise",
+    "sunset",
+    "julian-day",
+    "moon-phase"
+  ]
+}

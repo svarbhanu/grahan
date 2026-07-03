@@ -1,0 +1,3 @@
+# Normalize line endings to LF everywhere (repo is developed on Windows;
+# LF keeps prettier, git, and CI agreeing byte-for-byte).
+* text=auto eol=lf
