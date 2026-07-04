@@ -27,7 +27,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "tsc -p tsconfig.build.json"
+    "prepack": "tsc -p tsconfig.build.json"
   },
   "engines": {
     "node": ">=18"
