@@ -1,17 +1,14 @@
-import { CORE_VERSION } from '@grahan/core';
-
 /**
- * @grahan/vedic — Vedic layer on the grahan sky engine.
- *
- * Placeholder proving the workspace link to @grahan/core; the real modules
- * (ayanamsa, tithi, nakshatra, yoga, karana, Rahu Kaal) arrive in M5.
- *
- * @example
- * ```ts
- * import { engineInfo } from '@grahan/vedic';
- * console.log(engineInfo()); // { vedic: "0.0.0", core: "0.0.0" }
- * ```
+ * @grahan/vedic — the Vedic layer on the grahan sky engine: Lahiri
+ * ayanamsa, panchang elements (tithi, nakshatra, yoga, karana, vaar),
+ * and Rahu Kaal. Pure functions over @grahan/core's positions.
  */
-export function engineInfo(): { vedic: string; core: string } {
-  return { vedic: '0.0.0', core: CORE_VERSION };
-}
+
+export * from './ayanamsa.js';
+export * from './tithi.js';
+export * from './nakshatra.js';
+export * from './yoga.js';
+export * from './karana.js';
+export * from './vaar.js';
+export * from './rahuKaal.js';
+export * from './names.js';
