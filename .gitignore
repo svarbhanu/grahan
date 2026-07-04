@@ -4,6 +4,7 @@ node_modules/
 .claude/
 CLAUDE.md
 PLAN.md
+drafts/
 scripts/.venv/
 scripts/.cache/
 __pycache__/
