@@ -1,5 +1,9 @@
 node_modules/
-.claude/settings.local.json
+
+# local working notes — never published
+.claude/
+CLAUDE.md
+PLAN.md
 scripts/.venv/
 scripts/.cache/
 __pycache__/

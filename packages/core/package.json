@@ -1,6 +1,6 @@
 {
   "name": "@grahan/core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Astronomy-grade sky calculations: Julian day, ΔT, sun/moon positions, sunrise/sunset, sidereal time, moon phases. Zero dependencies.",
   "license": "MIT",
   "author": "Svarbhanu Neel",
@@ -16,6 +16,7 @@
     }
   },
   "publishConfig": {
+    "access": "public",
     "exports": {
       ".": {
         "types": "./dist/index.d.ts",
@@ -25,7 +26,8 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "tsc -p tsconfig.build.json"
   },
   "engines": {
     "node": ">=18"
