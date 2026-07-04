@@ -6,20 +6,52 @@ on:
   pull_request:
 
 jobs:
+  # Full pipeline on the Node version the toolchain requires (pnpm 11 needs ≥22.13).
   checks:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [18, 20, 22]
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm format:check
       - run: pnpm typecheck
       - run: pnpm test
+      - name: Pack publishable tarballs
+        run: |
+          mkdir -p tarballs
+          pnpm --filter @grahan/core exec pnpm pack --pack-destination "$GITHUB_WORKSPACE/tarballs"
+          pnpm --filter @grahan/vedic exec pnpm pack --pack-destination "$GITHUB_WORKSPACE/tarballs"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tarballs
+          path: tarballs/*.tgz
+
+  # The shipped artifact must run on the oldest supported consumers:
+  # install the packed tarballs with plain npm and smoke-test them.
+  node-compat:
+    needs: checks
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: tarballs
+          path: tarballs
+      - name: Install tarballs into a scratch consumer and smoke test
+        run: |
+          mkdir consumer && cd consumer
+          npm init -y > /dev/null
+          npm install ../tarballs/*.tgz
+          cp ../scripts/smoke.mjs .
+          node smoke.mjs
