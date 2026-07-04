@@ -1,6 +1,7 @@
 node_modules/
 .claude/settings.local.json
 scripts/.venv/
+scripts/.cache/
 __pycache__/
 dist/
 coverage/

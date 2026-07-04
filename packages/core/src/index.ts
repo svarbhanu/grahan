@@ -11,3 +11,7 @@ export * from './math/angles.js';
 export * from './time/julian.js';
 export * from './time/deltaT.js';
 export * from './time/timezone.js';
+export * from './earth/nutation.js';
+export * from './bodies/sun.js';
+export * from './bodies/moon.js';
+export * from './bodies/node.js';
