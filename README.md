@@ -7,6 +7,9 @@ positions, sunrise/sunset, moon phases — and cultural layers computed from
 them, starting with the Vedic panchang. Zero dependencies, pure functions,
 runs in Node ≥ 18, browsers, and edge runtimes.
 
+> 📖 [How it was built](https://dev.to/svarbhanu/i-built-a-zero-dependency-sky-engine-in-typescript-verified-to-46-arcseconds-317h) —
+> the verification method and the bugs the Arctic fixtures caught.
+
 ## Install
 
 ```bash
