@@ -12,3 +12,6 @@ dist/
 coverage/
 *.tsbuildinfo
 .DS_Store
+
+# npm auth (transient during publish) — never commit
+.npmrc
