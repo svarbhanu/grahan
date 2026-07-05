@@ -3,6 +3,7 @@
 // oldest supported Node versions. No test framework — plain node.
 import { panchang } from '@grahan/vedic';
 import { sunPosition, julianDayFromDate } from '@grahan/core';
+import { bsFromDate } from '@grahan/calendars';
 
 const p = panchang({
   date: new Date('1993-08-18T05:15:00Z'),
@@ -24,6 +25,10 @@ if (p.vaar.name !== 'Wednesday')
 if (Math.abs(sun.apparentLongitude - 145.281) > 0.01)
   failures.push(`sun: ${sun.apparentLongitude}`);
 
+const bs = bsFromDate({ year: 1993, month: 8, day: 18 });
+if (bs.year !== 2050 || bs.month !== 5 || bs.day !== 2)
+  failures.push(`bs: ${JSON.stringify([bs.year, bs.month, bs.day])}`);
+
 if (failures.length > 0) {
   console.error(
     `smoke FAILED on node ${process.version}:\n  ${failures.join('\n  ')}`,
@@ -31,5 +36,5 @@ if (failures.length > 0) {
   process.exit(1);
 }
 console.log(
-  `smoke OK on node ${process.version}: Shukla Pratipada · Magha-3 · Parigha · Wednesday`,
+  `smoke OK on node ${process.version}: Shukla Pratipada · Magha-3 · Parigha · Wednesday · Bhadra 2, 2050 BS`,
 );

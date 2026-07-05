@@ -5,7 +5,11 @@
  * is integer day counts anchored at Baisakh 1, 1975 BS = 1918-04-13 AD.
  */
 
-import { calendarFromJulianDay, julianDayFromCalendar } from '@grahan/core';
+import {
+  calendarFromJulianDay,
+  julianDayFromCalendar,
+  zonedTimeFromDate,
+} from '@grahan/core';
 import {
   BS_EPOCH_AD,
   BS_MAX_YEAR,
@@ -209,4 +213,21 @@ export function dateFromBs(bs: BsDate): AdDateInfo {
     day: cal.day,
     weekday: weekdayFromDayNumber(dayNumber),
   };
+}
+
+/**
+ * Today's Bikram Sambat date — "today" as read on the wall clock of the
+ * given IANA timezone, the only place an instant enters the BS API.
+ *
+ * @example
+ * ```ts
+ * todayBs({ timezone: 'Asia/Kathmandu' });
+ * // on 2026-07-05: { year: 2083, month: 3, day: 21,
+ * //   monthName: { roman: 'Asar', nepali: 'असार' }, weekday: { … 'Sunday' … },
+ * //   projected: false }
+ * ```
+ */
+export function todayBs(options: { timezone: string }): BsDateInfo {
+  const now = zonedTimeFromDate(new Date(), options.timezone);
+  return bsFromDate({ year: now.year, month: now.month, day: now.day });
 }

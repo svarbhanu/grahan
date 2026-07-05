@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **`@grahan/calendars`** — new package, world calendars on the grahan
+  core, starting with Bikram Sambat: `bsFromDate()` / `dateFromBs()`
+  (plain calendar-date conversion with month names in roman + Devanagari,
+  weekdays, and validation against real month lengths) and
+  `todayBs({ timezone })`. Month tables cover BS 1975–2200: 1975–2083
+  verified against published calendars and documented historical events;
+  2084–2200 projected from textbook Surya Siddhanta sankrantis with a
+  boundary rule fitted on the 109 verified years (99.77% of month starts
+  exact) — projected dates carry `projected: true`.
+
 ## [0.2.0] — 2026-07-05
 
 The chart release: from panchang to full jyotish.

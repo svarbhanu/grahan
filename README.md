@@ -13,8 +13,9 @@ runs in Node ≥ 18, browsers, and edge runtimes.
 ## Install
 
 ```bash
-npm install @grahan/vedic   # panchang (pulls in @grahan/core)
-npm install @grahan/core    # just the astronomy
+npm install @grahan/vedic      # panchang (pulls in @grahan/core)
+npm install @grahan/calendars  # Bikram Sambat ↔ AD (pulls in @grahan/core)
+npm install @grahan/core       # just the astronomy
 ```
 
 ## Example
@@ -81,12 +82,13 @@ sunriseSunset({
 
 ## Packages
 
-| Package         | What it does                                                                                                                        |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `@grahan/core`  | Secular astronomy: julian day, ΔT, apparent Sun/Moon/planets, mean lunar node, sidereal time, ascendant, sunrise/sunset, moon phase |
-| `@grahan/vedic` | Vedic layer on core: `panchang()`, `kundali()` with navamsa + SVG charts, Vimshottari dashas, transits, muhurta, gun-milan          |
+| Package             | What it does                                                                                                                        |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `@grahan/core`      | Secular astronomy: julian day, ΔT, apparent Sun/Moon/planets, mean lunar node, sidereal time, ascendant, sunrise/sunset, moon phase |
+| `@grahan/vedic`     | Vedic layer on core: `panchang()`, `kundali()` with navamsa + SVG charts, Vimshottari dashas, transits, muhurta, gun-milan          |
+| `@grahan/calendars` | World calendars, Bikram Sambat first: BS ↔ AD conversion (1975–2200 BS, verified tables + Surya Siddhanta projection), `todayBs()`  |
 
-More layers (world calendars, prayer times, tropical charts) are planned on
+More layers (Hijri, Hebrew, prayer times, tropical charts) are planned on
 the same core.
 
 ## Accuracy — measured, not hoped

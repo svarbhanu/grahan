@@ -26,6 +26,7 @@ jobs:
           mkdir -p tarballs
           pnpm --filter @grahan/core exec pnpm pack --pack-destination "$GITHUB_WORKSPACE/tarballs"
           pnpm --filter @grahan/vedic exec pnpm pack --pack-destination "$GITHUB_WORKSPACE/tarballs"
+          pnpm --filter @grahan/calendars exec pnpm pack --pack-destination "$GITHUB_WORKSPACE/tarballs"
       - uses: actions/upload-artifact@v4
         with:
           name: tarballs
