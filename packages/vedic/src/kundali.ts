@@ -79,6 +79,64 @@ const CLASSICAL_PLANETS: readonly Planet[] = [
   'saturn',
 ];
 
+export interface GrahaLongitude {
+  graha: Graha;
+  /** Sidereal (Lahiri) ecliptic longitude, degrees [0, 360). */
+  longitude: number;
+  retrograde: boolean;
+}
+
+/**
+ * Sidereal longitudes and retrograde flags of all nine grahas at an
+ * instant — the shared engine behind `kundali()` and `transits()`.
+ *
+ * @example
+ * ```ts
+ * grahaSiderealPositions(2449217.71875)[1];
+ * // { graha: 'moon', longitude: ≈127.20, retrograde: false }
+ * ```
+ */
+export function grahaSiderealPositions(jdUt: number): GrahaLongitude[] {
+  const sidereal = (tropical: number): number =>
+    siderealLongitude(tropical, jdUt);
+  const positions = new Map<Graha, GrahaLongitude>();
+  positions.set('sun', {
+    graha: 'sun',
+    longitude: sidereal(sunPosition(jdUt).apparentLongitude),
+    retrograde: false,
+  });
+  positions.set('moon', {
+    graha: 'moon',
+    longitude: sidereal(moonPosition(jdUt).apparentLongitude),
+    retrograde: false,
+  });
+  for (const planet of CLASSICAL_PLANETS) {
+    const position = planetPosition(planet, jdUt);
+    positions.set(planet, {
+      graha: planet,
+      longitude: sidereal(position.apparentLongitude),
+      retrograde: position.retrograde,
+    });
+  }
+  const rahu = meanLunarNode(jdUt);
+  // The mean node regresses ~3′/day, so Rahu/Ketu are always retrograde.
+  positions.set('rahu', {
+    graha: 'rahu',
+    longitude: sidereal(rahu),
+    retrograde: true,
+  });
+  positions.set('ketu', {
+    graha: 'ketu',
+    longitude: sidereal(rahu + 180),
+    retrograde: true,
+  });
+  return GRAHA_ORDER.map((graha) => {
+    const value = positions.get(graha);
+    if (value === undefined) throw new Error(`missing graha ${graha}`);
+    return value;
+  });
+}
+
 function rashiPosition(longitude: number): Omit<RashiPosition, 'nakshatra'> {
   const normalized = normalizeDegrees(longitude);
   const rashi = Math.floor(normalized / 30);
@@ -111,49 +169,27 @@ export function kundali(options: KundaliOptions): Kundali {
   const jdUt = julianDayFromDate(date);
   const ayanamsa = lahiriAyanamsa(jdUt);
 
-  const sidereal = (tropical: number): number =>
-    siderealLongitude(tropical, jdUt);
-
-  const tropicalByGraha = new Map<Graha, { longitude: number; retrograde: boolean }>();
-  tropicalByGraha.set('sun', {
-    longitude: sunPosition(jdUt).apparentLongitude,
-    retrograde: false,
-  });
-  tropicalByGraha.set('moon', {
-    longitude: moonPosition(jdUt).apparentLongitude,
-    retrograde: false,
-  });
-  for (const planet of CLASSICAL_PLANETS) {
-    const position = planetPosition(planet, jdUt);
-    tropicalByGraha.set(planet, {
-      longitude: position.apparentLongitude,
-      retrograde: position.retrograde,
-    });
-  }
-  const rahu = meanLunarNode(jdUt);
-  // The mean node regresses ~3′/day, so Rahu/Ketu are always retrograde.
-  tropicalByGraha.set('rahu', { longitude: rahu, retrograde: true });
-  tropicalByGraha.set('ketu', { longitude: rahu + 180, retrograde: true });
-
-  const lagnaLongitude = sidereal(ascendant(jdUt, latitude, longitude));
+  const lagnaLongitude = siderealLongitude(
+    ascendant(jdUt, latitude, longitude),
+    jdUt,
+  );
   const lagna: RashiPosition = {
     ...rashiPosition(lagnaLongitude),
     nakshatra: nakshatra(lagnaLongitude),
   };
 
-  const grahas: GrahaPosition[] = GRAHA_ORDER.map((graha) => {
-    const tropical = tropicalByGraha.get(graha);
-    if (tropical === undefined) throw new Error(`missing graha ${graha}`);
-    const longitudeSidereal = sidereal(tropical.longitude);
-    const base = rashiPosition(longitudeSidereal);
-    return {
-      ...base,
-      nakshatra: nakshatra(longitudeSidereal),
-      graha,
-      retrograde: tropical.retrograde,
-      bhava: ((base.rashi - lagna.rashi + 12) % 12) + 1,
-    };
-  });
+  const grahas: GrahaPosition[] = grahaSiderealPositions(jdUt).map(
+    (position) => {
+      const base = rashiPosition(position.longitude);
+      return {
+        ...base,
+        nakshatra: nakshatra(position.longitude),
+        graha: position.graha,
+        retrograde: position.retrograde,
+        bhava: ((base.rashi - lagna.rashi + 12) % 12) + 1,
+      };
+    },
+  );
 
   const bhavas: Bhava[] = Array.from({ length: 12 }, (_, index) => {
     const rashi = (lagna.rashi + index) % 12;
