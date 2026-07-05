@@ -1,6 +1,6 @@
 {
   "name": "@grahan/vedic",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Vedic layer for the grahan sky engine: ayanamsa, panchang (tithi, nakshatra, yoga, karana), Rahu Kaal. Zero dependencies.",
   "license": "MIT",
   "author": "Svarbhanu Neel",
