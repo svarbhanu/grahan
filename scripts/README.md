@@ -2,6 +2,9 @@
 
 `generate_fixtures.py` produces the golden JSON fixtures committed under
 `packages/*/fixtures/` by querying Swiss Ephemeris (via `pyswisseph`).
+`generate_eclipse_fixtures.py` does the same for the eclipse catalogs
+(all lunar + solar eclipses 1900–2100, plus per-site local circumstances);
+it self-checks against hand-copied NASA/Espenak catalog rows before writing.
 
 ## Why this is offline-only
 
