@@ -11,6 +11,15 @@ importers:
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.6.0)
+      '@grahan/calendars':
+        specifier: workspace:*
+        version: link:packages/calendars
+      '@grahan/core':
+        specifier: workspace:*
+        version: link:packages/core
+      '@grahan/vedic':
+        specifier: workspace:*
+        version: link:packages/vedic
       '@types/node':
         specifier: ^26.1.0
         version: 26.1.0

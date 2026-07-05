@@ -12,6 +12,7 @@
   "exports": {
     ".": {
       "types": "./src/index.ts",
+      "grahan-dist": "./dist/index.js",
       "default": "./src/index.ts"
     }
   },

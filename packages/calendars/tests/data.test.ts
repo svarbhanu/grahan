@@ -25,8 +25,8 @@ describe('BS month-length table', () => {
     }
   });
 
-  it('has only 365- or 366-day years in the verified zone', () => {
-    for (let year = BS_MIN_YEAR; year <= BS_VERIFIED_THROUGH; year++) {
+  it('has only 365- or 366-day years, projected zone included', () => {
+    for (let year = BS_MIN_YEAR; year <= BS_MAX_YEAR; year++) {
       const months = BS_MONTH_LENGTHS[year - BS_MIN_YEAR];
       const sum = (months ?? []).reduce((a, b) => a + b, 0);
       expect([365, 366], `BS ${year} has ${sum} days`).toContain(sum);

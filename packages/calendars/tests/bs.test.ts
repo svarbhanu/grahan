@@ -66,6 +66,35 @@ describe('bsFromDate', () => {
     expect(bs.projected).toBe(bs.year > BS_VERIFIED_THROUGH);
   });
 
+  it('flags projected dates past the verified zone', () => {
+    const lastVerified = dateFromBs({
+      year: BS_VERIFIED_THROUGH,
+      month: 12,
+      day: BS_MONTH_LENGTHS[BS_VERIFIED_THROUGH - BS_MIN_YEAR]?.[11] ?? 0,
+    });
+    expect(
+      bsFromDate({
+        year: lastVerified.year,
+        month: lastVerified.month,
+        day: lastVerified.day,
+      }).projected,
+    ).toBe(false);
+    const dayAfter = new Date(
+      Date.UTC(lastVerified.year, lastVerified.month - 1, lastVerified.day + 1),
+    );
+    const firstProjected = bsFromDate({
+      year: dayAfter.getUTCFullYear(),
+      month: dayAfter.getUTCMonth() + 1,
+      day: dayAfter.getUTCDate(),
+    });
+    expect([
+      firstProjected.year,
+      firstProjected.month,
+      firstProjected.day,
+    ]).toEqual([BS_VERIFIED_THROUGH + 1, 1, 1]);
+    expect(firstProjected.projected).toBe(true);
+  });
+
   it('rejects dates outside the table', () => {
     expect(() => bsFromDate({ year: 1918, month: 4, day: 12 })).toThrow(
       RangeError,

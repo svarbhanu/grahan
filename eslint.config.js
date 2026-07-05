@@ -17,7 +17,7 @@ export default tseslint.config(
     // Plain Node scripts (not part of the packages).
     files: ['scripts/**/*.mjs'],
     languageOptions: {
-      globals: { console: 'readonly', process: 'readonly' },
+      globals: { console: 'readonly', process: 'readonly', URL: 'readonly' },
     },
   },
 );
