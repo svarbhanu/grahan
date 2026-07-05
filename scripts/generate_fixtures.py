@@ -229,6 +229,31 @@ def gen_sun_moon() -> None:
     })
 
 
+def gen_planets() -> None:
+    start = swe.julday(1900, 1, 1, 0.0)
+    jds = [start + i * 624.37 for i in range(117)] + [J2000_JD, FOUNDER_JD, RAHU_KAAL_JD]
+    bodies = {
+        "mercury": swe.MERCURY, "venus": swe.VENUS, "mars": swe.MARS,
+        "jupiter": swe.JUPITER, "saturn": swe.SATURN,
+    }
+    data = []
+    for jd in jds:
+        record: dict = {"jdUt": round(jd, 8), "utc": utc_iso(jd)}
+        for name, body in bodies.items():
+            xx, _ = swe.calc_ut(jd, body, FLAGS)
+            record[name] = round(norm360(xx[0]), 6)
+            record[f"{name}Speed"] = round(xx[3], 6)
+        data.append(record)
+    write_json(CORE_FIXTURES / "planet-longitudes.json", {
+        "source": SOURCE,
+        "parameters": {
+            "count": len(data),
+            "frame": "geocentric apparent ecliptic-of-date, tropical, degrees; speed in deg/day",
+        },
+        "data": data,
+    })
+
+
 def gen_sunrise() -> None:
     data = [day_events(site, y, m, d) for site in SITES for (y, m, d) in SUNRISE_DATES]
     write_json(CORE_FIXTURES / "sunrise-sunset.json", {
@@ -319,6 +344,7 @@ def main() -> None:
     swe.set_sid_mode(swe.SIDM_LAHIRI, 0, 0)
     self_check()
     gen_sun_moon()
+    gen_planets()
     gen_sunrise()
     gen_ayanamsa()
     gen_panchang_elements()

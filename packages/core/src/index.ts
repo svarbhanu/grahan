@@ -17,5 +17,6 @@ export * from './earth/coordinates.js';
 export * from './bodies/sun.js';
 export * from './bodies/moon.js';
 export * from './bodies/node.js';
+export * from './bodies/planets.js';
 export * from './events/sunrise.js';
 export * from './events/moonphase.js';

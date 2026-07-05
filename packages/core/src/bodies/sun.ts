@@ -11,12 +11,8 @@ import { degToRad, normalizeDegrees, radToDeg } from '../math/angles.js';
 import { ttFromUt } from '../time/deltaT.js';
 import { J2000 } from '../time/julian.js';
 import { nutation } from '../earth/nutation.js';
-import {
-  EARTH_B,
-  EARTH_L,
-  EARTH_R,
-  type Vsop87Series,
-} from './vsop87-earth.data.js';
+import { EARTH_B, EARTH_L, EARTH_R } from './vsop87-earth.data.js';
+import { evaluateSeries } from './vsop87.js';
 
 export interface SunPosition {
   /** Apparent geocentric ecliptic longitude, degrees [0, 360). */
@@ -25,20 +21,6 @@ export interface SunPosition {
   latitude: number;
   /** Earth–Sun distance, astronomical units. */
   distanceAu: number;
-}
-
-function evaluateSeries(series: Vsop87Series, tau: number): number {
-  let total = 0;
-  let tauPower = 1;
-  for (const order of series) {
-    let sum = 0;
-    for (const [a, b, c] of order) {
-      sum += a * Math.cos(b + c * tau);
-    }
-    total += sum * tauPower;
-    tauPower *= tau;
-  }
-  return total;
 }
 
 /**
