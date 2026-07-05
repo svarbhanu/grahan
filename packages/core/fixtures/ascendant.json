@@ -1,0 +1,1522 @@
+{
+  "data": [
+    {
+      "ascendant": 263.029118,
+      "jdUt": 2415020.5,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 185.524235,
+      "site": "birgunj",
+      "utc": "1900-01-01T00:00:00Z"
+    },
+    {
+      "ascendant": 263.070739,
+      "jdUt": 2415020.5,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 186.005155,
+      "site": "kathmandu",
+      "utc": "1900-01-01T00:00:00Z"
+    },
+    {
+      "ascendant": 291.718553,
+      "jdUt": 2415020.5,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 205.896683,
+      "site": "singapore",
+      "utc": "1900-01-01T00:00:00Z"
+    },
+    {
+      "ascendant": 201.720475,
+      "jdUt": 2415020.5,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 122.838024,
+      "site": "helsinki",
+      "utc": "1900-01-01T00:00:00Z"
+    },
+    {
+      "ascendant": 36.153356,
+      "jdUt": 2416846.81,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 294.828169,
+      "site": "birgunj",
+      "utc": "1905-01-01T07:26:24Z"
+    },
+    {
+      "ascendant": 36.991594,
+      "jdUt": 2416846.81,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 295.247236,
+      "site": "kathmandu",
+      "utc": "1905-01-01T07:26:24Z"
+    },
+    {
+      "ascendant": 48.583058,
+      "jdUt": 2416846.81,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 313.231844,
+      "site": "singapore",
+      "utc": "1905-01-01T07:26:24Z"
+    },
+    {
+      "ascendant": 277.683654,
+      "jdUt": 2416846.81,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 239.039854,
+      "site": "helsinki",
+      "utc": "1905-01-01T07:26:24Z"
+    },
+    {
+      "ascendant": 143.293413,
+      "jdUt": 2418673.12,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 50.893733,
+      "site": "birgunj",
+      "utc": "1910-01-01T14:52:48Z"
+    },
+    {
+      "ascendant": 143.866805,
+      "jdUt": 2418673.12,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 51.329201,
+      "site": "kathmandu",
+      "utc": "1910-01-01T14:52:48Z"
+    },
+    {
+      "ascendant": 155.825981,
+      "jdUt": 2418673.12,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 69.094792,
+      "site": "singapore",
+      "utc": "1910-01-01T14:52:48Z"
+    },
+    {
+      "ascendant": 117.557009,
+      "jdUt": 2418673.12,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 347.51057,
+      "site": "helsinki",
+      "utc": "1910-01-01T14:52:48Z"
+    },
+    {
+      "ascendant": 241.336338,
+      "jdUt": 2420499.43,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 158.531426,
+      "site": "birgunj",
+      "utc": "1915-01-01T22:19:12Z"
+    },
+    {
+      "ascendant": 241.42319,
+      "jdUt": 2420499.43,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 159.00311,
+      "site": "kathmandu",
+      "utc": "1915-01-01T22:19:12Z"
+    },
+    {
+      "ascendant": 268.635168,
+      "jdUt": 2420499.43,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 179.017682,
+      "site": "singapore",
+      "utc": "1915-01-01T22:19:12Z"
+    },
+    {
+      "ascendant": 186.338359,
+      "jdUt": 2420499.43,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 99.389055,
+      "site": "helsinki",
+      "utc": "1915-01-01T22:19:12Z"
+    },
+    {
+      "ascendant": 2.602351,
+      "jdUt": 2422325.74,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 271.706446,
+      "site": "birgunj",
+      "utc": "1920-01-02T05:45:36Z"
+    },
+    {
+      "ascendant": 3.248581,
+      "jdUt": 2422325.74,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 272.11194,
+      "site": "kathmandu",
+      "utc": "1920-01-02T05:45:36Z"
+    },
+    {
+      "ascendant": 22.71365,
+      "jdUt": 2422325.74,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 289.211027,
+      "site": "singapore",
+      "utc": "1920-01-02T05:45:36Z"
+    },
+    {
+      "ascendant": 256.171813,
+      "jdUt": 2422325.74,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 214.172621,
+      "site": "helsinki",
+      "utc": "1920-01-02T05:45:36Z"
+    },
+    {
+      "ascendant": 121.846184,
+      "jdUt": 2424152.05,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 25.412458,
+      "site": "birgunj",
+      "utc": "1925-01-01T13:12:00Z"
+    },
+    {
+      "ascendant": 122.503508,
+      "jdUt": 2424152.05,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 25.879845,
+      "site": "kathmandu",
+      "utc": "1925-01-01T13:12:00Z"
+    },
+    {
+      "ascendant": 130.46654,
+      "jdUt": 2424152.05,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 44.954393,
+      "site": "singapore",
+      "utc": "1925-01-01T13:12:00Z"
+    },
+    {
+      "ascendant": 100.52843,
+      "jdUt": 2424152.05,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 321.221408,
+      "site": "helsinki",
+      "utc": "1925-01-01T13:12:00Z"
+    },
+    {
+      "ascendant": 219.920672,
+      "jdUt": 2425978.36,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 132.781693,
+      "site": "birgunj",
+      "utc": "1930-01-01T20:38:24Z"
+    },
+    {
+      "ascendant": 220.095533,
+      "jdUt": 2425978.36,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 133.222579,
+      "site": "kathmandu",
+      "utc": "1930-01-01T20:38:24Z"
+    },
+    {
+      "ascendant": 245.573064,
+      "jdUt": 2425978.36,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 152.199482,
+      "site": "singapore",
+      "utc": "1930-01-01T20:38:24Z"
+    },
+    {
+      "ascendant": 170.887088,
+      "jdUt": 2425978.36,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 76.47256,
+      "site": "helsinki",
+      "utc": "1930-01-01T20:38:24Z"
+    },
+    {
+      "ascendant": 328.599331,
+      "jdUt": 2427804.67,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 248.67881,
+      "site": "birgunj",
+      "utc": "1935-01-02T04:04:48Z"
+    },
+    {
+      "ascendant": 328.926683,
+      "jdUt": 2427804.67,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 249.094113,
+      "site": "kathmandu",
+      "utc": "1935-01-02T04:04:48Z"
+    },
+    {
+      "ascendant": 355.475878,
+      "jdUt": 2427804.67,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 266.228957,
+      "site": "singapore",
+      "utc": "1935-01-02T04:04:48Z"
+    },
+    {
+      "ascendant": 239.612059,
+      "jdUt": 2427804.67,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 187.633032,
+      "site": "helsinki",
+      "utc": "1935-01-02T04:04:48Z"
+    },
+    {
+      "ascendant": 100.272177,
+      "jdUt": 2429630.98,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 358.527313,
+      "site": "birgunj",
+      "utc": "1940-01-02T11:31:12Z"
+    },
+    {
+      "ascendant": 101.006643,
+      "jdUt": 2429630.98,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 359.008941,
+      "site": "kathmandu",
+      "utc": "1940-01-02T11:31:12Z"
+    },
+    {
+      "ascendant": 106.733129,
+      "jdUt": 2429630.98,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 19.059081,
+      "site": "singapore",
+      "utc": "1940-01-02T11:31:12Z"
+    },
+    {
+      "ascendant": 77.006177,
+      "jdUt": 2429630.98,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 296.674657,
+      "site": "helsinki",
+      "utc": "1940-01-02T11:31:12Z"
+    },
+    {
+      "ascendant": 198.106777,
+      "jdUt": 2431457.29,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 108.783546,
+      "site": "birgunj",
+      "utc": "1945-01-01T18:57:36Z"
+    },
+    {
+      "ascendant": 198.397371,
+      "jdUt": 2431457.29,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 109.197037,
+      "site": "kathmandu",
+      "utc": "1945-01-01T18:57:36Z"
+    },
+    {
+      "ascendant": 221.341911,
+      "jdUt": 2431457.29,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 126.882027,
+      "site": "singapore",
+      "utc": "1945-01-01T18:57:36Z"
+    },
+    {
+      "ascendant": 155.530196,
+      "jdUt": 2431457.29,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 52.799337,
+      "site": "helsinki",
+      "utc": "1945-01-01T18:57:36Z"
+    },
+    {
+      "ascendant": 298.991724,
+      "jdUt": 2433283.6,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 224.505115,
+      "site": "birgunj",
+      "utc": "1950-01-02T02:24:00Z"
+    },
+    {
+      "ascendant": 299.103768,
+      "jdUt": 2433283.6,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 224.949021,
+      "site": "kathmandu",
+      "utc": "1950-01-02T02:24:00Z"
+    },
+    {
+      "ascendant": 328.537903,
+      "jdUt": 2433283.6,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 243.02501,
+      "site": "singapore",
+      "utc": "1950-01-02T02:24:00Z"
+    },
+    {
+      "ascendant": 224.27505,
+      "jdUt": 2433283.6,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 160.602014,
+      "site": "helsinki",
+      "utc": "1950-01-02T02:24:00Z"
+    },
+    {
+      "ascendant": 77.243317,
+      "jdUt": 2435109.91,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 331.734728,
+      "site": "birgunj",
+      "utc": "1955-01-02T09:50:24Z"
+    },
+    {
+      "ascendant": 78.053942,
+      "jdUt": 2435109.91,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 332.199552,
+      "site": "kathmandu",
+      "utc": "1955-01-02T09:50:24Z"
+    },
+    {
+      "ascendant": 83.815831,
+      "jdUt": 2435109.91,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 352.031343,
+      "site": "singapore",
+      "utc": "1955-01-02T09:50:24Z"
+    },
+    {
+      "ascendant": 16.655946,
+      "jdUt": 2435109.91,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 273.487436,
+      "site": "helsinki",
+      "utc": "1955-01-02T09:50:24Z"
+    },
+    {
+      "ascendant": 175.92773,
+      "jdUt": 2436936.22,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 85.812545,
+      "site": "birgunj",
+      "utc": "1960-01-02T17:16:48Z"
+    },
+    {
+      "ascendant": 176.342342,
+      "jdUt": 2436936.22,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 86.218341,
+      "site": "kathmandu",
+      "utc": "1960-01-02T17:16:48Z"
+    },
+    {
+      "ascendant": 195.452296,
+      "jdUt": 2436936.22,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 103.232121,
+      "site": "singapore",
+      "utc": "1960-01-02T17:16:48Z"
+    },
+    {
+      "ascendant": 140.337333,
+      "jdUt": 2436936.22,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 27.46254,
+      "site": "helsinki",
+      "utc": "1960-01-02T17:16:48Z"
+    },
+    {
+      "ascendant": 274.036108,
+      "jdUt": 2438762.53,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 198.57034,
+      "site": "birgunj",
+      "utc": "1965-01-02T00:43:12Z"
+    },
+    {
+      "ascendant": 274.07758,
+      "jdUt": 2438762.53,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 199.044077,
+      "site": "kathmandu",
+      "utc": "1965-01-02T00:43:12Z"
+    },
+    {
+      "ascendant": 303.289847,
+      "jdUt": 2438762.53,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 218.446279,
+      "site": "singapore",
+      "utc": "1965-01-02T00:43:12Z"
+    },
+    {
+      "ascendant": 209.111548,
+      "jdUt": 2438762.53,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 134.720896,
+      "site": "helsinki",
+      "utc": "1965-01-02T00:43:12Z"
+    },
+    {
+      "ascendant": 50.777031,
+      "jdUt": 2440588.84,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 306.446904,
+      "site": "birgunj",
+      "utc": "1970-01-02T08:09:36Z"
+    },
+    {
+      "ascendant": 51.633002,
+      "jdUt": 2440588.84,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 306.879507,
+      "site": "kathmandu",
+      "utc": "1970-01-02T08:09:36Z"
+    },
+    {
+      "ascendant": 60.434582,
+      "jdUt": 2440588.84,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 325.504525,
+      "site": "singapore",
+      "utc": "1970-01-02T08:09:36Z"
+    },
+    {
+      "ascendant": 294.216075,
+      "jdUt": 2440588.84,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 250.496124,
+      "site": "helsinki",
+      "utc": "1970-01-02T08:09:36Z"
+    },
+    {
+      "ascendant": 153.84323,
+      "jdUt": 2442415.15,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 62.600036,
+      "site": "birgunj",
+      "utc": "1975-01-02T15:36:00Z"
+    },
+    {
+      "ascendant": 154.369758,
+      "jdUt": 2442415.15,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 63.021379,
+      "site": "kathmandu",
+      "utc": "1975-01-02T15:36:00Z"
+    },
+    {
+      "ascendant": 168.664004,
+      "jdUt": 2442415.15,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 80.323897,
+      "site": "singapore",
+      "utc": "1975-01-02T15:36:00Z"
+    },
+    {
+      "ascendant": 125.117598,
+      "jdUt": 2442415.15,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 0.643878,
+      "site": "helsinki",
+      "utc": "1975-01-02T15:36:00Z"
+    },
+    {
+      "ascendant": 251.74184,
+      "jdUt": 2444241.46,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 171.536348,
+      "site": "birgunj",
+      "utc": "1980-01-02T23:02:24Z"
+    },
+    {
+      "ascendant": 251.80061,
+      "jdUt": 2444241.46,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 172.016433,
+      "site": "kathmandu",
+      "utc": "1980-01-02T23:02:24Z"
+    },
+    {
+      "ascendant": 279.730979,
+      "jdUt": 2444241.46,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 192.139,
+      "site": "singapore",
+      "utc": "1980-01-02T23:02:24Z"
+    },
+    {
+      "ascendant": 193.808662,
+      "jdUt": 2444241.46,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 110.60387,
+      "site": "helsinki",
+      "utc": "1980-01-02T23:02:24Z"
+    },
+    {
+      "ascendant": 19.282634,
+      "jdUt": 2446067.77,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 282.812351,
+      "site": "birgunj",
+      "utc": "1985-01-02T06:28:48Z"
+    },
+    {
+      "ascendant": 20.049513,
+      "jdUt": 2446067.77,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 283.221644,
+      "site": "kathmandu",
+      "utc": "1985-01-02T06:28:48Z"
+    },
+    {
+      "ascendant": 35.478474,
+      "jdUt": 2446067.77,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 300.651609,
+      "site": "singapore",
+      "utc": "1985-01-02T06:28:48Z"
+    },
+    {
+      "ascendant": 265.492097,
+      "jdUt": 2446067.77,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 226.445341,
+      "site": "helsinki",
+      "utc": "1985-01-02T06:28:48Z"
+    },
+    {
+      "ascendant": 132.2067,
+      "jdUt": 2447894.08,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 37.992979,
+      "site": "birgunj",
+      "utc": "1990-01-02T13:55:12Z"
+    },
+    {
+      "ascendant": 132.824944,
+      "jdUt": 2447894.08,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 38.445457,
+      "site": "kathmandu",
+      "utc": "1990-01-02T13:55:12Z"
+    },
+    {
+      "ascendant": 142.547392,
+      "jdUt": 2447894.08,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 56.860316,
+      "site": "singapore",
+      "utc": "1990-01-02T13:55:12Z"
+    },
+    {
+      "ascendant": 109.12444,
+      "jdUt": 2447894.08,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 333.777808,
+      "site": "helsinki",
+      "utc": "1990-01-02T13:55:12Z"
+    },
+    {
+      "ascendant": 230.32906,
+      "jdUt": 2449720.39,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 145.043353,
+      "site": "birgunj",
+      "utc": "1995-01-02T21:21:36Z"
+    },
+    {
+      "ascendant": 230.457016,
+      "jdUt": 2449720.39,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 145.500262,
+      "site": "kathmandu",
+      "utc": "1995-01-02T21:21:36Z"
+    },
+    {
+      "ascendant": 256.830983,
+      "jdUt": 2449720.39,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 165.079069,
+      "site": "singapore",
+      "utc": "1995-01-02T21:21:36Z"
+    },
+    {
+      "ascendant": 178.373979,
+      "jdUt": 2449720.39,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 87.596049,
+      "site": "helsinki",
+      "utc": "1995-01-02T21:21:36Z"
+    },
+    {
+      "ascendant": 344.728676,
+      "jdUt": 2451546.7,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 259.901679,
+      "site": "birgunj",
+      "utc": "2000-01-03T04:48:00Z"
+    },
+    {
+      "ascendant": 345.209802,
+      "jdUt": 2451546.7,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 260.309369,
+      "site": "kathmandu",
+      "utc": "2000-01-03T04:48:00Z"
+    },
+    {
+      "ascendant": 8.746214,
+      "jdUt": 2451546.7,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 277.303752,
+      "site": "singapore",
+      "utc": "2000-01-03T04:48:00Z"
+    },
+    {
+      "ascendant": 247.37563,
+      "jdUt": 2451546.7,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 200.646657,
+      "site": "helsinki",
+      "utc": "2000-01-03T04:48:00Z"
+    },
+    {
+      "ascendant": 110.805262,
+      "jdUt": 2453373.01,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 11.652491,
+      "site": "birgunj",
+      "utc": "2005-01-02T12:14:24Z"
+    },
+    {
+      "ascendant": 111.502415,
+      "jdUt": 2453373.01,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 12.130904,
+      "site": "kathmandu",
+      "utc": "2005-01-02T12:14:24Z"
+    },
+    {
+      "ascendant": 118.061963,
+      "jdUt": 2453373.01,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 31.818843,
+      "site": "singapore",
+      "utc": "2005-01-02T12:14:24Z"
+    },
+    {
+      "ascendant": 89.905404,
+      "jdUt": 2453373.01,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 308.347961,
+      "site": "helsinki",
+      "utc": "2005-01-02T12:14:24Z"
+    },
+    {
+      "ascendant": 208.747357,
+      "jdUt": 2455199.32,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 120.227442,
+      "site": "birgunj",
+      "utc": "2010-01-02T19:40:48Z"
+    },
+    {
+      "ascendant": 208.979508,
+      "jdUt": 2455199.32,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 120.652439,
+      "site": "kathmandu",
+      "utc": "2010-01-02T19:40:48Z"
+    },
+    {
+      "ascendant": 233.291583,
+      "jdUt": 2455199.32,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 138.928858,
+      "site": "singapore",
+      "utc": "2010-01-02T19:40:48Z"
+    },
+    {
+      "ascendant": 162.954387,
+      "jdUt": 2455199.32,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 64.445727,
+      "site": "helsinki",
+      "utc": "2010-01-02T19:40:48Z"
+    },
+    {
+      "ascendant": 312.683432,
+      "jdUt": 2457025.63,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 236.42126,
+      "site": "birgunj",
+      "utc": "2015-01-03T03:07:12Z"
+    },
+    {
+      "ascendant": 312.879514,
+      "jdUt": 2457025.63,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 236.84975,
+      "site": "kathmandu",
+      "utc": "2015-01-03T03:07:12Z"
+    },
+    {
+      "ascendant": 341.43986,
+      "jdUt": 2457025.63,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 254.377261,
+      "site": "singapore",
+      "utc": "2015-01-03T03:07:12Z"
+    },
+    {
+      "ascendant": 231.659771,
+      "jdUt": 2457025.63,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 173.648711,
+      "site": "helsinki",
+      "utc": "2015-01-03T03:07:12Z"
+    },
+    {
+      "ascendant": 88.684971,
+      "jdUt": 2458851.94,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 344.586653,
+      "site": "birgunj",
+      "utc": "2020-01-03T10:33:36Z"
+    },
+    {
+      "ascendant": 89.459278,
+      "jdUt": 2458851.94,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 345.063065,
+      "site": "kathmandu",
+      "utc": "2020-01-03T10:33:36Z"
+    },
+    {
+      "ascendant": 94.888904,
+      "jdUt": 2458851.94,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 5.166544,
+      "site": "singapore",
+      "utc": "2020-01-03T10:33:36Z"
+    },
+    {
+      "ascendant": 55.342449,
+      "jdUt": 2458851.94,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 284.610802,
+      "site": "helsinki",
+      "utc": "2020-01-03T10:33:36Z"
+    },
+    {
+      "ascendant": 186.698252,
+      "jdUt": 2460678.25,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 96.89347,
+      "site": "birgunj",
+      "utc": "2025-01-02T18:00:00Z"
+    },
+    {
+      "ascendant": 187.053153,
+      "jdUt": 2460678.25,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 97.300072,
+      "site": "kathmandu",
+      "utc": "2025-01-02T18:00:00Z"
+    },
+    {
+      "ascendant": 208.190121,
+      "jdUt": 2460678.25,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 114.528649,
+      "site": "singapore",
+      "utc": "2025-01-02T18:00:00Z"
+    },
+    {
+      "ascendant": 147.681757,
+      "jdUt": 2460678.25,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 39.971024,
+      "site": "helsinki",
+      "utc": "2025-01-02T18:00:00Z"
+    },
+    {
+      "ascendant": 285.679259,
+      "jdUt": 2462504.56,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 211.355812,
+      "site": "birgunj",
+      "utc": "2030-01-03T01:26:24Z"
+    },
+    {
+      "ascendant": 285.740756,
+      "jdUt": 2462504.56,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 211.816541,
+      "site": "kathmandu",
+      "utc": "2030-01-03T01:26:24Z"
+    },
+    {
+      "ascendant": 315.290248,
+      "jdUt": 2462504.56,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 230.583368,
+      "site": "singapore",
+      "utc": "2030-01-03T01:26:24Z"
+    },
+    {
+      "ascendant": 216.478758,
+      "jdUt": 2462504.56,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 147.05523,
+      "site": "helsinki",
+      "utc": "2030-01-03T01:26:24Z"
+    },
+    {
+      "ascendant": 64.153206,
+      "jdUt": 2464330.87,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 318.469034,
+      "site": "birgunj",
+      "utc": "2035-01-03T08:52:48Z"
+    },
+    {
+      "ascendant": 64.995448,
+      "jdUt": 2464330.87,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 318.917468,
+      "site": "kathmandu",
+      "utc": "2035-01-03T08:52:48Z"
+    },
+    {
+      "ascendant": 71.898277,
+      "jdUt": 2464330.87,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 338.190603,
+      "site": "singapore",
+      "utc": "2035-01-03T08:52:48Z"
+    },
+    {
+      "ascendant": 323.527651,
+      "jdUt": 2464330.87,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 261.692185,
+      "site": "helsinki",
+      "utc": "2035-01-03T08:52:48Z"
+    },
+    {
+      "ascendant": 164.495423,
+      "jdUt": 2466157.18,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 73.954266,
+      "site": "birgunj",
+      "utc": "2040-01-03T16:19:12Z"
+    },
+    {
+      "ascendant": 164.97017,
+      "jdUt": 2466157.18,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 74.365391,
+      "site": "kathmandu",
+      "utc": "2040-01-03T16:19:12Z"
+    },
+    {
+      "ascendant": 181.654104,
+      "jdUt": 2466157.18,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 91.406835,
+      "site": "singapore",
+      "utc": "2040-01-03T16:19:12Z"
+    },
+    {
+      "ascendant": 132.514831,
+      "jdUt": 2466157.18,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 13.747811,
+      "site": "helsinki",
+      "utc": "2040-01-03T16:19:12Z"
+    },
+    {
+      "ascendant": 262.348922,
+      "jdUt": 2467983.49,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 184.684029,
+      "site": "birgunj",
+      "utc": "2045-01-02T23:45:36Z"
+    },
+    {
+      "ascendant": 262.391403,
+      "jdUt": 2467983.49,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 185.165097,
+      "site": "kathmandu",
+      "utc": "2045-01-02T23:45:36Z"
+    },
+    {
+      "ascendant": 290.993162,
+      "jdUt": 2467983.49,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 205.077966,
+      "site": "singapore",
+      "utc": "2045-01-02T23:45:36Z"
+    },
+    {
+      "ascendant": 201.251344,
+      "jdUt": 2467983.49,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 122.09526,
+      "site": "helsinki",
+      "utc": "2045-01-02T23:45:36Z"
+    },
+    {
+      "ascendant": 35.174043,
+      "jdUt": 2469809.8,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 294.107382,
+      "site": "birgunj",
+      "utc": "2050-01-03T07:12:00Z"
+    },
+    {
+      "ascendant": 36.00924,
+      "jdUt": 2469809.8,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 294.525755,
+      "site": "kathmandu",
+      "utc": "2050-01-03T07:12:00Z"
+    },
+    {
+      "ascendant": 47.813776,
+      "jdUt": 2469809.8,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 312.473642,
+      "site": "singapore",
+      "utc": "2050-01-03T07:12:00Z"
+    },
+    {
+      "ascendant": 276.909843,
+      "jdUt": 2469809.8,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 238.299721,
+      "site": "helsinki",
+      "utc": "2050-01-03T07:12:00Z"
+    },
+    {
+      "ascendant": 142.624441,
+      "jdUt": 2471636.11,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 50.130813,
+      "site": "birgunj",
+      "utc": "2055-01-03T14:38:24Z"
+    },
+    {
+      "ascendant": 143.200543,
+      "jdUt": 2471636.11,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 50.567282,
+      "site": "kathmandu",
+      "utc": "2055-01-03T14:38:24Z"
+    },
+    {
+      "ascendant": 155.022695,
+      "jdUt": 2471636.11,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 68.369465,
+      "site": "singapore",
+      "utc": "2055-01-03T14:38:24Z"
+    },
+    {
+      "ascendant": 117.03656,
+      "jdUt": 2471636.11,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 346.682088,
+      "site": "helsinki",
+      "utc": "2055-01-03T14:38:24Z"
+    },
+    {
+      "ascendant": 240.677004,
+      "jdUt": 2473462.42,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 157.708815,
+      "site": "birgunj",
+      "utc": "2060-01-03T22:04:48Z"
+    },
+    {
+      "ascendant": 240.76629,
+      "jdUt": 2473462.42,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 158.179696,
+      "site": "kathmandu",
+      "utc": "2060-01-03T22:04:48Z"
+    },
+    {
+      "ascendant": 267.925068,
+      "jdUt": 2473462.42,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 178.173922,
+      "site": "singapore",
+      "utc": "2060-01-03T22:04:48Z"
+    },
+    {
+      "ascendant": 185.859727,
+      "jdUt": 2473462.42,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 98.676593,
+      "site": "helsinki",
+      "utc": "2060-01-03T22:04:48Z"
+    },
+    {
+      "ascendant": 1.525834,
+      "jdUt": 2475288.73,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 271.000832,
+      "site": "birgunj",
+      "utc": "2065-01-03T05:31:12Z"
+    },
+    {
+      "ascendant": 2.162667,
+      "jdUt": 2475288.73,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 271.406323,
+      "site": "kathmandu",
+      "utc": "2065-01-03T05:31:12Z"
+    },
+    {
+      "ascendant": 21.883907,
+      "jdUt": 2475288.73,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 288.49356,
+      "site": "singapore",
+      "utc": "2065-01-03T05:31:12Z"
+    },
+    {
+      "ascendant": 255.650757,
+      "jdUt": 2475288.73,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 213.372105,
+      "site": "helsinki",
+      "utc": "2065-01-03T05:31:12Z"
+    },
+    {
+      "ascendant": 121.186645,
+      "jdUt": 2477115.04,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 24.6005,
+      "site": "birgunj",
+      "utc": "2070-01-03T12:57:36Z"
+    },
+    {
+      "ascendant": 121.846249,
+      "jdUt": 2477115.04,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 25.068673,
+      "site": "kathmandu",
+      "utc": "2070-01-03T12:57:36Z"
+    },
+    {
+      "ascendant": 129.720211,
+      "jdUt": 2477115.04,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 44.182775,
+      "site": "singapore",
+      "utc": "2070-01-03T12:57:36Z"
+    },
+    {
+      "ascendant": 99.906725,
+      "jdUt": 2477115.04,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 320.445722,
+      "site": "helsinki",
+      "utc": "2070-01-03T12:57:36Z"
+    },
+    {
+      "ascendant": 219.25588,
+      "jdUt": 2478941.35,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 132.019256,
+      "site": "birgunj",
+      "utc": "2075-01-03T20:24:00Z"
+    },
+    {
+      "ascendant": 219.434192,
+      "jdUt": 2478941.35,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 132.459129,
+      "site": "kathmandu",
+      "utc": "2075-01-03T20:24:00Z"
+    },
+    {
+      "ascendant": 244.843198,
+      "jdUt": 2478941.35,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 151.393502,
+      "site": "singapore",
+      "utc": "2075-01-03T20:24:00Z"
+    },
+    {
+      "ascendant": 170.407281,
+      "jdUt": 2478941.35,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 75.755941,
+      "site": "helsinki",
+      "utc": "2075-01-03T20:24:00Z"
+    },
+    {
+      "ascendant": 327.610607,
+      "jdUt": 2480767.66,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 247.947928,
+      "site": "birgunj",
+      "utc": "2080-01-04T03:50:24Z"
+    },
+    {
+      "ascendant": 327.929086,
+      "jdUt": 2480767.66,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 248.363931,
+      "site": "kathmandu",
+      "utc": "2080-01-04T03:50:24Z"
+    },
+    {
+      "ascendant": 354.625426,
+      "jdUt": 2480767.66,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 265.517706,
+      "site": "singapore",
+      "utc": "2080-01-04T03:50:24Z"
+    },
+    {
+      "ascendant": 239.147489,
+      "jdUt": 2480767.66,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 186.790704,
+      "site": "helsinki",
+      "utc": "2080-01-04T03:50:24Z"
+    },
+    {
+      "ascendant": 99.586307,
+      "jdUt": 2482593.97,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 357.692276,
+      "site": "birgunj",
+      "utc": "2085-01-03T11:16:48Z"
+    },
+    {
+      "ascendant": 100.323013,
+      "jdUt": 2482593.97,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 358.173782,
+      "site": "kathmandu",
+      "utc": "2085-01-03T11:16:48Z"
+    },
+    {
+      "ascendant": 106.023067,
+      "jdUt": 2482593.97,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 18.235077,
+      "site": "singapore",
+      "utc": "2085-01-03T11:16:48Z"
+    },
+    {
+      "ascendant": 75.955794,
+      "jdUt": 2482593.97,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 295.948196,
+      "site": "helsinki",
+      "utc": "2085-01-03T11:16:48Z"
+    },
+    {
+      "ascendant": 197.430348,
+      "jdUt": 2484420.28,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 108.071806,
+      "site": "birgunj",
+      "utc": "2090-01-03T18:43:12Z"
+    },
+    {
+      "ascendant": 197.72483,
+      "jdUt": 2484420.28,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 108.484773,
+      "site": "kathmandu",
+      "utc": "2090-01-03T18:43:12Z"
+    },
+    {
+      "ascendant": 220.567606,
+      "jdUt": 2484420.28,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 126.138406,
+      "site": "singapore",
+      "utc": "2090-01-03T18:43:12Z"
+    },
+    {
+      "ascendant": 155.054357,
+      "jdUt": 2484420.28,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 52.044758,
+      "site": "helsinki",
+      "utc": "2090-01-03T18:43:12Z"
+    },
+    {
+      "ascendant": 298.172789,
+      "jdUt": 2486246.59,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 223.723373,
+      "site": "birgunj",
+      "utc": "2095-01-04T02:09:36Z"
+    },
+    {
+      "ascendant": 298.281184,
+      "jdUt": 2486246.59,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 224.16831,
+      "site": "kathmandu",
+      "utc": "2095-01-04T02:09:36Z"
+    },
+    {
+      "ascendant": 327.730559,
+      "jdUt": 2486246.59,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 242.284649,
+      "site": "singapore",
+      "utc": "2095-01-04T02:09:36Z"
+    },
+    {
+      "ascendant": 223.820941,
+      "jdUt": 2486246.59,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 159.778568,
+      "site": "helsinki",
+      "utc": "2095-01-04T02:09:36Z"
+    },
+    {
+      "ascendant": 106.139644,
+      "jdUt": 2451545.0,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 5.816147,
+      "site": "birgunj",
+      "utc": "2000-01-01T12:00:00Z"
+    },
+    {
+      "ascendant": 106.853349,
+      "jdUt": 2451545.0,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 6.296937,
+      "site": "kathmandu",
+      "utc": "2000-01-01T12:00:00Z"
+    },
+    {
+      "ascendant": 112.982635,
+      "jdUt": 2451545.0,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 26.178317,
+      "site": "singapore",
+      "utc": "2000-01-01T12:00:00Z"
+    },
+    {
+      "ascendant": 84.64937,
+      "jdUt": 2451545.0,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 303.10111,
+      "site": "helsinki",
+      "utc": "2000-01-01T12:00:00Z"
+    },
+    {
+      "ascendant": 215.556884,
+      "jdUt": 2449217.71875,
+      "lat": 27.0104,
+      "lon": 84.8821,
+      "midheaven": 127.805788,
+      "site": "birgunj",
+      "utc": "1993-08-18T05:15:00Z"
+    },
+    {
+      "ascendant": 215.7535,
+      "jdUt": 2449217.71875,
+      "lat": 27.7172,
+      "lon": 85.324,
+      "midheaven": 128.240139,
+      "site": "kathmandu",
+      "utc": "1993-08-18T05:15:00Z"
+    },
+    {
+      "ascendant": 240.802886,
+      "jdUt": 2449217.71875,
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "midheaven": 146.941372,
+      "site": "singapore",
+      "utc": "1993-08-18T05:15:00Z"
+    },
+    {
+      "ascendant": 167.772023,
+      "jdUt": 2449217.71875,
+      "lat": 60.1699,
+      "lon": 24.9384,
+      "midheaven": 71.790806,
+      "site": "helsinki",
+      "utc": "1993-08-18T05:15:00Z"
+    }
+  ],
+  "parameters": {
+    "count": 168,
+    "frame": "tropical ecliptic of date, degrees; swe.houses ascmc",
+    "latitudeLimit": "sites with |lat| <= 66 deg only"
+  },
+  "source": "swisseph-2.10.03 (pyswisseph 2.10.3.2), moshier, Lahiri, mean node"
+}

@@ -14,6 +14,7 @@ export * from './time/timezone.js';
 export * from './earth/nutation.js';
 export * from './earth/sidereal.js';
 export * from './earth/coordinates.js';
+export * from './earth/ascendant.js';
 export * from './bodies/sun.js';
 export * from './bodies/moon.js';
 export * from './bodies/node.js';

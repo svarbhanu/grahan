@@ -267,6 +267,34 @@ def gen_sunrise() -> None:
     })
 
 
+def gen_ascendant() -> None:
+    sites = [s for s in SITES if abs(s["lat"]) <= 66]  # asc degenerates polewards
+    start = swe.julday(1900, 1, 1, 0.0)
+    jds = [start + i * 1826.31 for i in range(40)] + [J2000_JD, FOUNDER_JD]
+    data = []
+    for jd in jds:
+        for site in sites:
+            _, ascmc = swe.houses(jd, site["lat"], site["lon"], b"W")
+            data.append({
+                "jdUt": round(jd, 8),
+                "utc": utc_iso(jd),
+                "site": site["name"],
+                "lat": site["lat"],
+                "lon": site["lon"],
+                "ascendant": round(ascmc[0], 6),
+                "midheaven": round(ascmc[1], 6),
+            })
+    write_json(CORE_FIXTURES / "ascendant.json", {
+        "source": SOURCE,
+        "parameters": {
+            "count": len(data),
+            "frame": "tropical ecliptic of date, degrees; swe.houses ascmc",
+            "latitudeLimit": "sites with |lat| <= 66 deg only",
+        },
+        "data": data,
+    })
+
+
 def gen_ayanamsa() -> None:
     jds = [swe.julday(year, 1, 1, 0.0) for year in range(1900, 2100, 5)] + [FOUNDER_JD]
     data = [
@@ -345,6 +373,7 @@ def main() -> None:
     self_check()
     gen_sun_moon()
     gen_planets()
+    gen_ascendant()
     gen_sunrise()
     gen_ayanamsa()
     gen_panchang_elements()
