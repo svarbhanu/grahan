@@ -1,0 +1,83 @@
+{
+  "data": {
+    "anchors": [
+      {
+        "ad": [1918, 4, 13],
+        "bs": [1975, 1, 1],
+        "weekday": "Saturday",
+        "note": "table epoch (amitgaru/nepali-datetime reference date)"
+      },
+      {
+        "ad": [1943, 4, 14],
+        "bs": [2000, 1, 1],
+        "weekday": "Wednesday",
+        "note": "independent epoch of opensource-nepal/node-nepali-datetime"
+      },
+      {
+        "ad": [1993, 8, 18],
+        "bs": [2050, 5, 2],
+        "weekday": "Wednesday",
+        "note": "founder birthday; hamropatro.com/date/2050-5-2 renders Aug 18, 1993, बुधवार"
+      },
+      {
+        "ad": [2001, 6, 1],
+        "bs": [2058, 2, 19],
+        "weekday": "Friday",
+        "note": "royal palace massacre, widely documented as Jestha 19, 2058"
+      },
+      {
+        "ad": [2005, 5, 14],
+        "bs": [2062, 1, 31],
+        "weekday": "Saturday",
+        "note": "31-day Baisakh — settles the dataset-B 2062 bug; hamropatro.com/date/2062-1-31 is a valid page"
+      },
+      {
+        "ad": [2005, 5, 15],
+        "bs": [2062, 2, 1],
+        "weekday": "Sunday",
+        "note": "month boundary after the 31-day Baisakh"
+      },
+      {
+        "ad": [2008, 5, 28],
+        "bs": [2065, 2, 15],
+        "weekday": "Wednesday",
+        "note": "republic declared; Republic Day is Jestha 15"
+      },
+      {
+        "ad": [2015, 4, 25],
+        "bs": [2072, 1, 12],
+        "weekday": "Saturday",
+        "note": "Gorkha earthquake, widely documented as Baisakh 12, 2072"
+      },
+      {
+        "ad": [2015, 9, 20],
+        "bs": [2072, 6, 3],
+        "weekday": "Sunday",
+        "note": "constitution promulgated, Asoj 3, 2072"
+      },
+      {
+        "ad": [2024, 4, 13],
+        "bs": [2081, 1, 1],
+        "weekday": "Saturday",
+        "note": "Nepali new year 2081"
+      },
+      {
+        "ad": [2026, 7, 5],
+        "bs": [2083, 3, 21],
+        "weekday": "Sunday",
+        "note": "session day; hamropatro.com header rendered २१ असार २०८३, आइतवार"
+      },
+      {
+        "ad": [2027, 4, 13],
+        "bs": [2083, 12, 30],
+        "weekday": "Tuesday",
+        "note": "last day of the verified zone (Chaitra 30, 2083)"
+      }
+    ]
+  },
+  "parameters": {
+    "epochAd": "1918-04-13 = Baisakh 1, 1975 BS",
+    "table": "verified zone BS 1975-2083"
+  },
+  "source": "hamropatro.com date pages fetched 2026-07-05 (server-rendered: today header, 2050-5-2, 2062-1-31); documented historical events (Gorkha earthquake, constitution promulgation, royal massacre, first Republic Day); month tables cross-validated between amitgaru/nepali-datetime (BS 1975-2100) and opensource-nepal/node-nepali-datetime (BS 2000-2099), exact agreement 2000-2083 apart from B's known 2062 error"
+}

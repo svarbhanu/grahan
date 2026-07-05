@@ -5,4 +5,6 @@
  * published calendars, and conversion is exact day-count arithmetic.
  */
 
+export * from './bs.js';
+export * from './bs.data.js';
 export * from './names.js';
