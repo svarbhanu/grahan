@@ -6,7 +6,8 @@
 import { normalizeDegrees } from '@grahan/core';
 import { NAKSHATRA_NAMES } from './names.js';
 
-const NAKSHATRA_WIDTH = 360 / 27; // 13°20′
+/** Width of one nakshatra, 13°20′. */
+export const NAKSHATRA_WIDTH = 360 / 27;
 const PADA_WIDTH = 360 / 108; // 3°20′
 
 export interface Nakshatra {
