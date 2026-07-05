@@ -4,7 +4,8 @@ The secular astronomy core of the [grahan](https://github.com/svarbhanu/grahan)
 sky engine. Zero dependencies; Node ≥ 18, browsers, edge runtimes.
 
 Julian day & calendar conversions, ΔT, IANA timezone helpers, apparent
-Sun/Moon positions, mean lunar node, nutation, sidereal time,
+Sun/Moon/planet positions (Mercury–Saturn with speed and retrograde flags),
+mean lunar node, nutation, sidereal time, ascendant & midheaven,
 sunrise/sunset with explicit polar states, moon phase.
 
 ```ts
@@ -24,7 +25,8 @@ moonPhase(julianDayFromDate(new Date())).phaseName; // e.g. 'waning-gibbous'
 ```
 
 Accuracy is measured against Swiss Ephemeris reference fixtures: Sun max
-4.6″, Moon max 65″, sunrise/sunset max 4.6 s (1900–2100; details in the
+4.6″, Moon max 65″, planets max 7.8″, ascendant max 3.1″, sunrise/sunset
+max 4.6 s (1900–2100; details in the
 [repository README](https://github.com/svarbhanu/grahan#accuracy--measured-not-hoped)).
 
 MIT © Svarbhanu Neel

@@ -40,6 +40,29 @@ Sunrise, sunset, yoga, and karana are in the same result. Polar latitudes
 return explicit `'always-up'` / `'always-down'` daylight states instead of
 fabricated times.
 
+### Birth charts, dashas, and SVG rendering (v0.2)
+
+```ts
+import { kundali, kundaliSvg, vimshottari } from '@grahan/vedic';
+
+const birth = new Date('1993-08-18T05:15:00Z'); // 11:00 NPT
+const k = kundali({ date: birth, latitude: 27.0104, longitude: 84.8821 });
+
+console.log(k.lagna.rashiName); // 'Tula' (Libra 11°47′ rising)
+console.log(k.grahas[1].nakshatra); // { index: 9, name: 'Magha', pada: 3 } — Moon
+console.log(k.grahas[6].retrograde); // true — Saturn ℞ in Kumbha, 5th house
+
+const svg = kundaliSvg(k, { style: 'north' }); // or 'south'; ready to embed
+
+const v = vimshottari(k.grahas[1].longitude, birth);
+console.log(v.birthLord, v.balanceYears.toFixed(2)); // 'ketu' '3.21'
+console.log(v.mahadashas[3].lord); // 'moon' — starts 2022-11-04
+```
+
+Transits (`transits()`), auspicious windows (`abhijitMuhurta()`,
+`findMuhurta()`), and 36-point match-making (`gunMilan()`) ship in the same
+package — see the CHANGELOG for the full v0.2 surface.
+
 The secular core works standalone:
 
 ```ts
@@ -58,10 +81,10 @@ sunriseSunset({
 
 ## Packages
 
-| Package         | What it does                                                                                                     |
-| --------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `@grahan/core`  | Secular astronomy: julian day, ΔT, apparent Sun/Moon, mean lunar node, sidereal time, sunrise/sunset, moon phase |
-| `@grahan/vedic` | Vedic layer on core: Lahiri ayanamsa, tithi, nakshatra, yoga, karana, vaar, Rahu Kaal, `panchang()`              |
+| Package         | What it does                                                                                                                        |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `@grahan/core`  | Secular astronomy: julian day, ΔT, apparent Sun/Moon/planets, mean lunar node, sidereal time, ascendant, sunrise/sunset, moon phase |
+| `@grahan/vedic` | Vedic layer on core: `panchang()`, `kundali()` with navamsa + SVG charts, Vimshottari dashas, transits, muhurta, gun-milan          |
 
 More layers (world calendars, prayer times, tropical charts) are planned on
 the same core.
@@ -77,13 +100,18 @@ itself is never used at runtime — it is AGPL; grahan is MIT).
 | --------------- | ------- | ------------------------------------------------------ |
 | Sun longitude   | ±36″    | max 4.6″, mean 0.9″ (120 instants)                     |
 | Moon longitude  | ±180″   | max 65″, mean 10.5″ (120 instants)                     |
+| Planets (Me–Sa) | ±72″    | max 7.8″ (Mercury) down to 1.1″ (Saturn)               |
+| Ascendant       | ±36″    | max 3.1″ (168 cases, 1°N–60°N)                         |
 | Sunrise/sunset  | ±60 s   | max 4.6 s, mean 0.9 s (272 events, 5 sites incl. 71°N) |
 | Lahiri ayanamsa | —       | max 0.002″ (41 epochs)                                 |
 
 **Limits, stated plainly:** ΔT model is fit for 1800–2150 (degrades outside);
 ayanamsa is verified for 1900–2100; timezone conversion supports years
 100–9999 CE at whole-second precision; panchang elements are reported for
-the queried instant (boundary-crossing timestamps are planned post-v0.1).
+the queried instant (boundary-crossing timestamps are planned post-v0.1);
+the ascendant is valid for |latitude| ≲ 66°; gun-milan follows the most
+widely published classical tables — regional scoring variants exist and are
+documented in the module.
 
 ## License
 
