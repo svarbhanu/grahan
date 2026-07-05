@@ -5,6 +5,8 @@
  */
 
 export * from './panchang.js';
+export * from './kundali.js';
+export * from './navamsa.js';
 export * from './ayanamsa.js';
 export * from './tithi.js';
 export * from './nakshatra.js';

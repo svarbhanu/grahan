@@ -350,6 +350,51 @@ def gen_founder_chart() -> None:
     })
 
 
+def gen_kundali_grid() -> None:
+    """Full sidereal charts (lagna + 9 grahas) across times and latitudes."""
+    swe.set_sid_mode(swe.SIDM_LAHIRI, 0, 0)
+    sites = [s for s in SITES if s["name"] in ("birgunj", "singapore", "helsinki")]
+    start = swe.julday(1902, 3, 1, 7.5)
+    jds = [start + i * 6543.21 for i in range(12)] + [FOUNDER_JD]
+    bodies = {
+        "sun": swe.SUN, "moon": swe.MOON, "mars": swe.MARS, "mercury": swe.MERCURY,
+        "jupiter": swe.JUPITER, "venus": swe.VENUS, "saturn": swe.SATURN,
+        "rahu": swe.MEAN_NODE,
+    }
+    data = []
+    for jd in jds:
+        aya = ayanamsa(jd)
+        chart_bodies = {}
+        retro = {}
+        for name, body in bodies.items():
+            xx, _ = swe.calc_ut(jd, body, FLAGS)
+            chart_bodies[name] = round(norm360(xx[0] - aya), 6)
+            retro[name] = xx[3] < 0
+        chart_bodies["ketu"] = round(norm360(chart_bodies["rahu"] + 180), 6)
+        retro["ketu"] = retro["rahu"]
+        for site in sites:
+            _, ascmc = swe.houses_ex(jd, site["lat"], site["lon"], b"W", swe.FLG_SIDEREAL)
+            data.append({
+                "jdUt": round(jd, 8),
+                "utc": utc_iso(jd),
+                "site": site["name"],
+                "lat": site["lat"],
+                "lon": site["lon"],
+                "ayanamsa": round(aya, 6),
+                "lagnaSidereal": round(ascmc[0], 6),
+                "bodiesSidereal": chart_bodies,
+                "retrograde": retro,
+            })
+    write_json(VEDIC_FIXTURES / "kundali-grid.json", {
+        "source": SOURCE,
+        "parameters": {
+            "count": len(data),
+            "frame": "sidereal (Lahiri) ecliptic-of-date longitudes, degrees; mean node",
+        },
+        "data": data,
+    })
+
+
 def gen_rahu_kaal() -> None:
     ktm = next(s for s in SITES if s["name"] == "kathmandu")
     events = day_events(ktm, 2026, 7, 2)
@@ -378,6 +423,7 @@ def main() -> None:
     gen_ayanamsa()
     gen_panchang_elements()
     gen_founder_chart()
+    gen_kundali_grid()
     gen_rahu_kaal()
     print("done")
 
