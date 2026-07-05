@@ -1,10 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import {
-  DASHA_ORDER,
-  DASHA_YEARS,
-  vimshottari,
-} from '../src/index.js';
+import { DASHA_ORDER, DASHA_YEARS, vimshottari } from '../src/index.js';
 
 const founder = JSON.parse(
   readFileSync(

@@ -14,9 +14,7 @@ const NEXT_MIDNIGHT = new Date('2026-07-02T18:15:00Z');
 const NPT_OFFSET_MS = 5.75 * 3_600_000;
 
 function npt(date: Date): string {
-  return new Date(date.getTime() + NPT_OFFSET_MS)
-    .toISOString()
-    .slice(11, 16);
+  return new Date(date.getTime() + NPT_OFFSET_MS).toISOString().slice(11, 16);
 }
 
 describe('abhijitMuhurta (Kathmandu, 2026-07-02)', () => {

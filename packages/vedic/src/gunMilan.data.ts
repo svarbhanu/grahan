@@ -12,11 +12,7 @@ export const VARNA_BY_RASHI: readonly number[] = [
 ];
 
 export type Vashya =
-  | 'chatushpada'
-  | 'manava'
-  | 'jalachara'
-  | 'vanachara'
-  | 'keeta';
+  'chatushpada' | 'manava' | 'jalachara' | 'vanachara' | 'keeta';
 
 export const VASHYA_ORDER: readonly Vashya[] = [
   'chatushpada',

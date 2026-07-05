@@ -55,8 +55,18 @@ function vashyaOf(longitude: number): Vashya {
   if (rashi === 8) return firstHalf ? 'manava' : 'chatushpada'; // Dhanu
   if (rashi === 9) return firstHalf ? 'chatushpada' : 'jalachara'; // Makara
   const byRashi: readonly Vashya[] = [
-    'chatushpada', 'chatushpada', 'manava', 'jalachara', 'vanachara',
-    'manava', 'manava', 'keeta', 'manava', 'jalachara', 'manava', 'jalachara',
+    'chatushpada',
+    'chatushpada',
+    'manava',
+    'jalachara',
+    'vanachara',
+    'manava',
+    'manava',
+    'keeta',
+    'manava',
+    'jalachara',
+    'manava',
+    'jalachara',
   ];
   return byRashi[rashi] ?? 'manava';
 }
@@ -208,7 +218,16 @@ export function gunMilan(
     groom: groomNadi,
   };
 
-  const kootas = { varna, vashya, tara, yoni, grahaMaitri, gana, bhakoot, nadi };
+  const kootas = {
+    varna,
+    vashya,
+    tara,
+    yoni,
+    grahaMaitri,
+    gana,
+    bhakoot,
+    nadi,
+  };
   const total = Object.values(kootas).reduce(
     (sum, koota) => sum + koota.points,
     0,

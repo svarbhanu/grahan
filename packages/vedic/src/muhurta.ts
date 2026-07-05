@@ -94,10 +94,7 @@ function dayContext(date: Date, place: Place): DayContext {
  * // ≈ { start: 11:40 NPT, end: 12:35 NPT } (a 55-min 1/15 of a 13.8-h day)
  * ```
  */
-export function abhijitMuhurta(
-  date: Date,
-  place: Place,
-): MuhurtaWindow | null {
+export function abhijitMuhurta(date: Date, place: Place): MuhurtaWindow | null {
   const { sunrise, sunset } = dayContext(date, place);
   if (sunrise === null || sunset === null) return null;
   const daylightMs = sunset.getTime() - sunrise.getTime();
@@ -149,7 +146,10 @@ function passes(
   const jdUt = julianDayFromDate(date);
   const sun = sunPosition(jdUt).apparentLongitude;
   const moon = moonPosition(jdUt).apparentLongitude;
-  if (allowedTithis !== undefined && !allowedTithis.includes(tithi(sun, moon).index))
+  if (
+    allowedTithis !== undefined &&
+    !allowedTithis.includes(tithi(sun, moon).index)
+  )
     return false;
   const siderealSun = siderealLongitude(sun, jdUt);
   const siderealMoon = siderealLongitude(moon, jdUt);

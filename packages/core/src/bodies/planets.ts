@@ -116,9 +116,9 @@ function apparentEcliptic(planet: Planet, jdUt: number): Apparent {
   const sunMinusLon = degToRad(sunLongitude - longitude);
   const periMinusLon = degToRad(perihelion - longitude);
   longitude +=
-    ((-ABERRATION_ARCSEC * Math.cos(sunMinusLon) +
+    (-ABERRATION_ARCSEC * Math.cos(sunMinusLon) +
       eccentricity * ABERRATION_ARCSEC * Math.cos(periMinusLon)) /
-      Math.cos(latRad)) /
+    Math.cos(latRad) /
     3600;
   latitude +=
     (-ABERRATION_ARCSEC *

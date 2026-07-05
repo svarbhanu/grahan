@@ -74,7 +74,8 @@ function antardashas(
   for (let i = 0; i < DASHA_ORDER.length; i += 1) {
     const sub = DASHA_ORDER[(startIndex + i) % DASHA_ORDER.length];
     if (sub === undefined) continue;
-    const lengthMs = ((lordYears(lord) * lordYears(sub)) / CYCLE_YEARS) * YEAR_MS;
+    const lengthMs =
+      ((lordYears(lord) * lordYears(sub)) / CYCLE_YEARS) * YEAR_MS;
     const endMs = cursorMs + lengthMs;
     if (endMs > clipMs) {
       periods.push({
