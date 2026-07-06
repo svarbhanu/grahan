@@ -23,10 +23,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
+      # No registry-url here, deliberately: setup-node's registry-url
+      # writes an .npmrc _authToken=${NODE_AUTH_TOKEN} placeholder that
+      # npm uses INSTEAD of attempting the OIDC exchange (masked E404).
+      # npmjs.org is npm's default registry; OIDC needs nothing else.
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          registry-url: 'https://registry.npmjs.org'
           # No dependency caching in release builds.
       - name: Ensure npm supports trusted publishing (needs >= 11.5.1)
         run: |
