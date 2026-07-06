@@ -5,7 +5,11 @@
  */
 
 import { julianDayFromDate } from '@grahan/core';
-import { grahaSiderealPositions, type Kundali } from './kundali.js';
+import {
+  grahaSiderealPositions,
+  type Kundali,
+  type NodeKind,
+} from './kundali.js';
 import { nakshatra, type Nakshatra } from './nakshatra.js';
 import { RASHI_NAMES, type Graha } from './names.js';
 
@@ -14,6 +18,8 @@ export interface TransitOptions {
   date: Date;
   /** The natal chart the transit is judged against. */
   natal: Kundali;
+  /** Rahu/Ketu from the mean (default) or true osculating node. */
+  node?: NodeKind;
 }
 
 export interface TransitPosition {
@@ -42,22 +48,24 @@ export interface TransitPosition {
  * ```
  */
 export function transits(options: TransitOptions): TransitPosition[] {
-  const { date, natal } = options;
+  const { date, natal, node = 'mean' } = options;
   const natalMoon = natal.grahas.find((graha) => graha.graha === 'moon');
   const moonRashi = natalMoon?.rashi ?? natal.lagna.rashi;
 
-  return grahaSiderealPositions(julianDayFromDate(date)).map((position) => {
-    const rashi = Math.floor(position.longitude / 30);
-    return {
-      graha: position.graha,
-      longitude: position.longitude,
-      rashi,
-      rashiName: RASHI_NAMES[rashi] ?? '',
-      degreeInRashi: position.longitude - rashi * 30,
-      nakshatra: nakshatra(position.longitude),
-      retrograde: position.retrograde,
-      bhavaFromLagna: ((rashi - natal.lagna.rashi + 12) % 12) + 1,
-      bhavaFromMoon: ((rashi - moonRashi + 12) % 12) + 1,
-    };
-  });
+  return grahaSiderealPositions(julianDayFromDate(date), node).map(
+    (position) => {
+      const rashi = Math.floor(position.longitude / 30);
+      return {
+        graha: position.graha,
+        longitude: position.longitude,
+        rashi,
+        rashiName: RASHI_NAMES[rashi] ?? '',
+        degreeInRashi: position.longitude - rashi * 30,
+        nakshatra: nakshatra(position.longitude),
+        retrograde: position.retrograde,
+        bhavaFromLagna: ((rashi - natal.lagna.rashi + 12) % 12) + 1,
+        bhavaFromMoon: ((rashi - moonRashi + 12) % 12) + 1,
+      };
+    },
+  );
 }

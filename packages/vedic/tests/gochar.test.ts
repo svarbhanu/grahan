@@ -51,4 +51,22 @@ describe('transits', () => {
       expect(transit.rashiName).not.toBe('');
     }
   });
+
+  it("node: 'true' moves only Rahu/Ketu", () => {
+    const date = new Date('2026-07-04T12:00:00Z');
+    const mean = transits({ date, natal: NATAL });
+    const osculating = transits({ date, natal: NATAL, node: 'true' });
+    for (let i = 0; i < mean.length; i++) {
+      const a = mean[i];
+      const b = osculating[i];
+      if (!a || !b) throw new Error('length mismatch');
+      if (a.graha === 'rahu' || a.graha === 'ketu') {
+        expect(b.longitude).not.toBe(a.longitude);
+        const gap = Math.abs(b.longitude - a.longitude);
+        expect(Math.min(gap, 360 - gap)).toBeLessThan(2);
+      } else {
+        expect(b.longitude).toBe(a.longitude);
+      }
+    }
+  });
 });
