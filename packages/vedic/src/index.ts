@@ -19,5 +19,6 @@ export * from './nakshatra.js';
 export * from './yoga.js';
 export * from './karana.js';
 export * from './vaar.js';
+export * from './endTimes.js';
 export * from './rahuKaal.js';
 export * from './names.js';
