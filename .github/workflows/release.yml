@@ -60,6 +60,8 @@ jobs:
             FLAGS="--access public --dry-run"
             echo "workflow_dispatch run: rehearsal only (--dry-run)"
           fi
-          npm publish $FLAGS tarballs/grahan-core-*.tgz
-          npm publish $FLAGS tarballs/grahan-calendars-*.tgz
-          npm publish $FLAGS tarballs/grahan-vedic-*.tgz
+          # The ./ prefix is load-bearing: a bare a/b.tgz is parsed by
+          # npm as a github:a/b shorthand, not a file path.
+          npm publish $FLAGS ./tarballs/grahan-core-*.tgz
+          npm publish $FLAGS ./tarballs/grahan-calendars-*.tgz
+          npm publish $FLAGS ./tarballs/grahan-vedic-*.tgz
