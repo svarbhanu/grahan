@@ -56,3 +56,25 @@ jobs:
           npm install ../tarballs/*.tgz
           cp ../scripts/smoke.mjs .
           node smoke.mjs
+
+  # The README claims browser/edge support and tree-shakeability;
+  # this job proves both against the actual shipped tarballs.
+  browser-bundle:
+    needs: checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/download-artifact@v4
+        with:
+          name: tarballs
+          path: tarballs
+      - name: Bundle for the browser and check size, shaking, and output
+        run: |
+          mkdir consumer && cd consumer
+          npm init -y > /dev/null
+          npm install ../tarballs/*.tgz esbuild --no-audit --no-fund
+          cp ../scripts/check-browser-bundle.mjs .
+          node check-browser-bundle.mjs
