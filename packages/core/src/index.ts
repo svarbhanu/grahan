@@ -24,3 +24,4 @@ export * from './events/moonphase.js';
 export * from './events/syzygy.js';
 export * from './events/lunar-eclipse.js';
 export * from './events/solar-eclipse.js';
+export * from './events/solar-eclipse-local.js';

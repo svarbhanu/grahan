@@ -8,25 +8,27 @@
  * the surface point nearest the axis. All instants are Julian days (UT).
  */
 
-import { degToRad, normalizeDegrees, radToDeg } from '../math/angles.js';
+import { normalizeDegrees, radToDeg } from '../math/angles.js';
 import { goldenMinimize } from '../math/optimize.js';
 import { moonPosition } from '../bodies/moon.js';
-import { sunPosition } from '../bodies/sun.js';
-import { trueObliquity } from '../earth/nutation.js';
 import { greenwichApparentSiderealTime } from '../earth/sidereal.js';
 import { nextNewMoon } from './syzygy.js';
-
-const EARTH_RADIUS_KM = 6378.137;
-const EARTH_FLATTENING = 1 / 298.257223563;
-const SUN_RADIUS_KM = 696000;
-const KM_PER_AU = 149597870.7;
-/**
- * Moon radius for eclipse work, NASA convention: the larger IAU value
- * for penumbral (partial) phases, Danjon's smaller one for umbral
- * (total/annular) phases — the pair that best fits the fixtures.
- */
-const MOON_RADIUS_PENUMBRAL_KM = 0.2725076 * EARTH_RADIUS_KM;
-const MOON_RADIUS_UMBRAL_KM = 0.272281 * EARTH_RADIUS_KM;
+import {
+  EARTH_FLATTENING,
+  EARTH_RADIUS_KM,
+  MOON_RADIUS_PENUMBRAL_KM,
+  MOON_RADIUS_UMBRAL_KM,
+  SUN_RADIUS_KM,
+  type Vec3,
+  add,
+  angleBetween,
+  dot,
+  norm,
+  scale,
+  sub,
+  sunMoonVectors,
+  unit,
+} from './eclipse-geometry.js';
 
 /** The Moon's latitude at new moon can't exceed this when any eclipse occurs. */
 const NO_ECLIPSE_LATITUDE = 1.7;
@@ -58,51 +60,6 @@ export interface SolarEclipse {
   globalEnd: number;
 }
 
-interface Vec3 {
-  x: number;
-  y: number;
-  z: number;
-}
-
-const dot = (a: Vec3, b: Vec3) => a.x * b.x + a.y * b.y + a.z * b.z;
-const sub = (a: Vec3, b: Vec3): Vec3 => ({
-  x: a.x - b.x,
-  y: a.y - b.y,
-  z: a.z - b.z,
-});
-const scale = (a: Vec3, k: number): Vec3 => ({
-  x: a.x * k,
-  y: a.y * k,
-  z: a.z * k,
-});
-const add = (a: Vec3, b: Vec3): Vec3 => ({
-  x: a.x + b.x,
-  y: a.y + b.y,
-  z: a.z + b.z,
-});
-const norm = (a: Vec3) => Math.hypot(a.x, a.y, a.z);
-const unit = (a: Vec3): Vec3 => scale(a, 1 / norm(a));
-
-/** Ecliptic spherical position → rectangular equatorial-of-date, km. */
-function equatorialVector(
-  lonDeg: number,
-  latDeg: number,
-  distanceKm: number,
-  obliquityDeg: number,
-): Vec3 {
-  const lon = degToRad(lonDeg);
-  const lat = degToRad(latDeg);
-  const eps = degToRad(obliquityDeg);
-  const xe = Math.cos(lat) * Math.cos(lon);
-  const ye = Math.cos(lat) * Math.sin(lon);
-  const ze = Math.sin(lat);
-  return {
-    x: distanceKm * xe,
-    y: distanceKm * (ye * Math.cos(eps) - ze * Math.sin(eps)),
-    z: distanceKm * (ye * Math.sin(eps) + ze * Math.cos(eps)),
-  };
-}
-
 interface Circumstances {
   /** Shadow axis crosses the (stretched) ellipsoid. */
   axisHits: boolean;
@@ -125,21 +82,7 @@ interface Circumstances {
  * keeps lines straight.
  */
 function circumstances(jdUt: number): Circumstances {
-  const eps = trueObliquity(jdUt);
-  const sunEcl = sunPosition(jdUt);
-  const moonEcl = moonPosition(jdUt);
-  const sun = equatorialVector(
-    sunEcl.apparentLongitude,
-    sunEcl.latitude,
-    sunEcl.distanceAu * KM_PER_AU,
-    eps,
-  );
-  const moon = equatorialVector(
-    moonEcl.apparentLongitude,
-    moonEcl.latitude,
-    moonEcl.distanceKm,
-    eps,
-  );
+  const { sun, moon } = sunMoonVectors(jdUt);
 
   const stretch = 1 / (1 - EARTH_FLATTENING);
   const moonS: Vec3 = { x: moon.x, y: moon.y, z: moon.z * stretch };
@@ -167,14 +110,7 @@ function circumstances(jdUt: number): Circumstances {
 
   const toMoon = sub(moon, surfacePoint);
   const toSun = sub(sun, surfacePoint);
-  const separation = Math.atan2(
-    norm({
-      x: toMoon.y * toSun.z - toMoon.z * toSun.y,
-      y: toMoon.z * toSun.x - toMoon.x * toSun.z,
-      z: toMoon.x * toSun.y - toMoon.y * toSun.x,
-    }),
-    dot(toMoon, toSun),
-  );
+  const separation = angleBetween(toMoon, toSun);
   const moonDist = norm(toMoon);
 
   return {
