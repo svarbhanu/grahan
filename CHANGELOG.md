@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] — 2026-07-06
+
+The stability release. No calculation changed; everything around the
+calculations became production-grade.
+
+### Added
+
+- **Input validation at every public API boundary.** Bad inputs
+  (latitude 95, `new Date(NaN)`, month 13, an unknown IANA zone) throw
+  a `RangeError` naming the offending value instead of propagating NaN.
+  The validators (`assertFinite`, `assertLatitude`, `assertLongitude`,
+  `assertValidDate`, `assertCivilDate`) are exported from
+  `@grahan/core`.
+- **`transits({ node: 'true' })`** — the true-node option kundali()
+  gained in 0.5.0 now reaches transits too.
+- **API reference** at <https://svarbhanu.github.io/grahan/>, built
+  from the JSDoc on every public function.
+- SECURITY.md and CONTRIBUTING.md.
+
+### Changed
+
+- **The public API surface is frozen** and pinned by tests (47 exports
+  in core, 50 in vedic, 10 in calendars). From 1.0.0, breaking changes
+  only ship with a major version.
+- **Releases are published tokenlessly from CI** via npm trusted
+  publishing (OIDC) with provenance attestations, after an in-workflow
+  tarball inspection (dist-only contents, rewritten exports, version
+  matches the tag).
+- CI now proves the browser claim: the shipped tarballs bundle for the
+  browser with zero Node builtins, and tree-shaking holds (a
+  panchang-only bundle is 9.7 KB gzipped vs 92 KB for everything).
+
 ## [0.5.0] — 2026-07-06
 
 The day-view release: panchang the way calendars print it.

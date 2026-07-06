@@ -210,6 +210,16 @@ inherently soft timings, and a sunrise-clamped local eclipse maximum at
 polar latitudes can differ from other sources by minutes (refraction
 models differ there).
 
+## Stability
+
+v1.0 froze the public API: the exact export surface of every package is
+pinned by tests, breaking changes only come with a major version, and
+additions come with minors. Bad inputs throw `RangeError` — behavior
+that is part of the contract. Releases are published from CI via npm
+trusted publishing with provenance attestations; there are no long-lived
+publish tokens. Node ≥ 18 (`import`) is supported; see Install for the
+full matrix.
+
 ## License
 
 MIT © Svarbhanu Neel
