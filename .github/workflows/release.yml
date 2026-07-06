@@ -1,0 +1,65 @@
+# Tokenless npm publishing via OIDC trusted publishing.
+#
+# Real publishes run only on v* tags. A workflow_dispatch run is always a
+# dry-run rehearsal: full pipeline, pack, inspection, `npm publish --dry-run`.
+#
+# npm side (one-time, per package, on npmjs.com): Settings → Trusted
+# Publisher → GitHub Actions → svarbhanu / grahan / release.yml.
+
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  id-token: write # OIDC token for npm trusted publishing
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: 'https://registry.npmjs.org'
+          # No dependency caching in release builds.
+      - name: Ensure npm supports trusted publishing (needs >= 11.5.1)
+        run: |
+          npm install -g npm@latest
+          npm --version
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm format:check
+      - run: pnpm typecheck
+      - run: pnpm test
+
+      - name: Pack publishable tarballs (pnpm applies publishConfig + workspace versions)
+        run: |
+          mkdir -p tarballs
+          pnpm --filter @grahan/core exec pnpm pack --pack-destination "$GITHUB_WORKSPACE/tarballs"
+          pnpm --filter @grahan/calendars exec pnpm pack --pack-destination "$GITHUB_WORKSPACE/tarballs"
+          pnpm --filter @grahan/vedic exec pnpm pack --pack-destination "$GITHUB_WORKSPACE/tarballs"
+
+      - name: Inspect tarballs (dist-only, exports rewritten, version = tag)
+        run: |
+          if [ "${{ github.ref_type }}" = "tag" ]; then
+            export EXPECT_VERSION="${GITHUB_REF_NAME#v}"
+          fi
+          node scripts/inspect-tarball.mjs tarballs/*.tgz
+
+      - name: Publish (dependency order; dry-run unless a v* tag triggered this)
+        run: |
+          if [ "${{ github.ref_type }}" = "tag" ]; then
+            FLAGS="--access public"
+          else
+            FLAGS="--access public --dry-run"
+            echo "workflow_dispatch run: rehearsal only (--dry-run)"
+          fi
+          npm publish $FLAGS tarballs/grahan-core-*.tgz
+          npm publish $FLAGS tarballs/grahan-calendars-*.tgz
+          npm publish $FLAGS tarballs/grahan-vedic-*.tgz
