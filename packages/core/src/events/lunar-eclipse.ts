@@ -5,6 +5,7 @@
  */
 
 import { degToRad, radToDeg } from '../math/angles.js';
+import { goldenMinimize } from '../math/optimize.js';
 import { moonPosition } from '../bodies/moon.js';
 import { sunPosition } from '../bodies/sun.js';
 import { nextFullMoon } from './syzygy.js';
@@ -109,31 +110,14 @@ function shadowGeometry(jdUt: number): ShadowGeometry {
   };
 }
 
-/** Instant of least Moon–shadow separation via golden-section search. */
+/** Instant of least Moon–shadow separation. */
 function findMaximum(fullMoonJd: number): number {
-  const phi = (Math.sqrt(5) - 1) / 2;
-  let lo = fullMoonJd - 0.25;
-  let hi = fullMoonJd + 0.25;
-  let a = hi - phi * (hi - lo);
-  let b = lo + phi * (hi - lo);
-  let fa = shadowGeometry(a).separation;
-  let fb = shadowGeometry(b).separation;
-  while (hi - lo > 1e-8) {
-    if (fa <= fb) {
-      hi = b;
-      b = a;
-      fb = fa;
-      a = hi - phi * (hi - lo);
-      fa = shadowGeometry(a).separation;
-    } else {
-      lo = a;
-      a = b;
-      fa = fb;
-      b = lo + phi * (hi - lo);
-      fb = shadowGeometry(b).separation;
-    }
-  }
-  return (lo + hi) / 2;
+  return goldenMinimize(
+    (t) => shadowGeometry(t).separation,
+    fullMoonJd - 0.25,
+    fullMoonJd + 0.25,
+    1e-8,
+  );
 }
 
 /**
