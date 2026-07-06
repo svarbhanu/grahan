@@ -80,13 +80,52 @@ sunriseSunset({
 // { sunrise: { kind: 'rises', date: 2026-07-01T23:26:36Z }, sunset: … }
 ```
 
+### Eclipses (v0.4) — ग्रहण finally computes ग्रहण
+
+The project is named after the Sanskrit word for eclipse; as of v0.4 it
+computes them — detection, type, magnitudes, and contact times for every
+eclipse from 1900 to 2100, in the same zero-dependency core:
+
+```ts
+import {
+  nextSolarEclipseAt,
+  nextLunarEclipse,
+  julianDayFromDate,
+  dateFromJulianDay,
+} from '@grahan/core';
+
+// When does Kathmandu next see the Sun bitten? Any lat/lon works.
+const jd = julianDayFromDate(new Date('2026-07-06T00:00:00Z'));
+const solar = nextSolarEclipseAt(jd, { latitude: 27.7172, longitude: 85.324 });
+
+solar.type; // 'partial' — 2027-08-02: the Egypt totality, grazing Nepal
+dateFromJulianDay(solar.maximum); // 2027-08-02T11:05:02Z (16:50 NPT)
+solar.magnitude; // 0.0751 — a small bite off the solar diameter
+solar.obscuration; // 0.0248 — 2.5 % of the disc covered
+
+// The New Year's Eve total lunar eclipse of 2028, high over Kathmandu:
+const lunar = nextLunarEclipse(
+  julianDayFromDate(new Date('2028-12-01T00:00:00Z')),
+);
+
+lunar.type; // 'total', umbral magnitude 1.25
+dateFromJulianDay(lunar.totalBegin); // 2028-12-31T16:16:13Z — totality 22:01–23:12 NPT
+```
+
+`nextSolarEclipse()` gives the global picture (partial / annular / total /
+hybrid, centrality, and the greatest-eclipse instant, ground point, and
+magnitude), and `nextNewMoon()` / `nextFullMoon()` ship alongside. Local
+circumstances report the **visible** maximum: if the geometric peak is
+below the horizon, you get the sunrise/sunset moment instead, matching
+NASA-style local tables.
+
 ## Packages
 
-| Package             | What it does                                                                                                                        |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `@grahan/core`      | Secular astronomy: julian day, ΔT, apparent Sun/Moon/planets, mean lunar node, sidereal time, ascendant, sunrise/sunset, moon phase |
-| `@grahan/vedic`     | Vedic layer on core: `panchang()`, `kundali()` with navamsa + SVG charts, Vimshottari dashas, transits, muhurta, gun-milan          |
-| `@grahan/calendars` | World calendars, Bikram Sambat first: BS ↔ AD conversion (1975–2200 BS, verified tables + Surya Siddhanta projection), `todayBs()`  |
+| Package             | What it does                                                                                                                                                                 |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@grahan/core`      | Secular astronomy: julian day, ΔT, apparent Sun/Moon/planets, mean lunar node, sidereal time, ascendant, sunrise/sunset, moon phase, lunar & solar eclipses (global + local) |
+| `@grahan/vedic`     | Vedic layer on core: `panchang()`, `kundali()` with navamsa + SVG charts, Vimshottari dashas, transits, muhurta, gun-milan                                                   |
+| `@grahan/calendars` | World calendars, Bikram Sambat first: BS ↔ AD conversion (1975–2200 BS, verified tables + Surya Siddhanta projection), `todayBs()`                                           |
 
 More layers (Hijri, Hebrew, prayer times, tropical charts) are planned on
 the same core.
@@ -98,14 +137,16 @@ truncated VSOP87 and ELP-2000/82 series) and verified against Swiss
 Ephemeris 2.10 reference fixtures committed in this repo (Swiss Ephemeris
 itself is never used at runtime — it is AGPL; grahan is MIT).
 
-| Quantity        | Promise | Measured vs Swiss Ephemeris (1900–2100)                |
-| --------------- | ------- | ------------------------------------------------------ |
-| Sun longitude   | ±36″    | max 4.6″, mean 0.9″ (120 instants)                     |
-| Moon longitude  | ±180″   | max 65″, mean 10.5″ (120 instants)                     |
-| Planets (Me–Sa) | ±72″    | max 7.8″ (Mercury) down to 1.1″ (Saturn)               |
-| Ascendant       | ±36″    | max 3.1″ (168 cases, 1°N–60°N)                         |
-| Sunrise/sunset  | ±60 s   | max 4.6 s, mean 0.9 s (272 events, 5 sites incl. 71°N) |
-| Lahiri ayanamsa | —       | max 0.002″ (41 epochs)                                 |
+| Quantity           | Promise | Measured vs Swiss Ephemeris (1900–2100)                                                            |
+| ------------------ | ------- | -------------------------------------------------------------------------------------------------- |
+| Sun longitude      | ±36″    | max 4.6″, mean 0.9″ (120 instants)                                                                 |
+| Moon longitude     | ±180″   | max 65″, mean 10.5″ (120 instants)                                                                 |
+| Planets (Me–Sa)    | ±72″    | max 7.8″ (Mercury) down to 1.1″ (Saturn)                                                           |
+| Ascendant          | ±36″    | max 3.1″ (168 cases, 1°N–60°N)                                                                     |
+| Sunrise/sunset     | ±60 s   | max 4.6 s, mean 0.9 s (272 events, 5 sites incl. 71°N)                                             |
+| Lahiri ayanamsa    | —       | max 0.002″ (41 epochs)                                                                             |
+| Eclipse times      | ±2½ min | detection & type exact on all 909 events; instants mean ~20 s, max 151 s (a 0.005-magnitude graze) |
+| Eclipse magnitudes | —       | ≤ 0.002 (lunar ≤ 0.0015); fixtures cross-checked against NASA/Espenak's canon                      |
 
 **Limits, stated plainly:** ΔT model is fit for 1800–2150 (degrades outside);
 ayanamsa is verified for 1900–2100; timezone conversion supports years
@@ -113,7 +154,10 @@ ayanamsa is verified for 1900–2100; timezone conversion supports years
 the queried instant (boundary-crossing timestamps are planned post-v0.1);
 the ascendant is valid for |latitude| ≲ 66°; gun-milan follows the most
 widely published classical tables — regional scoring variants exist and are
-documented in the module.
+documented in the module; sub-0.02-magnitude grazing eclipses have
+inherently soft timings, and a sunrise-clamped local eclipse maximum at
+polar latitudes can differ from other sources by minutes (refraction
+models differ there).
 
 ## License
 

@@ -7,6 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-07-06
+
+The namesake release: ग्रहण (grahan) means eclipse — now it computes them.
+
+### Added
+
+- **`@grahan/core`** — eclipses, verified against every event 1900–2100
+  (457 lunar + 452 solar):
+  - `nextLunarEclipse()` — penumbral/partial/total, umbral & penumbral
+    magnitudes, and all contact times (P1–P4, U1–U4), from Meeus shadow
+    geometry with the NASA/Danjon shadow enlargement.
+  - `nextSolarEclipse()` — global circumstances: partial/annular/total/
+    hybrid, centrality, greatest-eclipse instant, ground point, and
+    magnitude, computed from the true 3-D shadow axis against the
+    flattened Earth (no Besselian elements).
+  - `nextSolarEclipseAt()` — local circumstances for any lat/lon:
+    visibility, local type, magnitude, obscuration, and the four
+    contacts. The reported maximum is the _visible_ one — clamped to
+    sunrise/sunset when the geometric peak is below the horizon,
+    matching NASA-style local tables.
+  - `nextNewMoon()`, `nextFullMoon()`, `nextSyzygy()` — precise phase
+    instants.
+  - Measured vs Swiss Ephemeris: detection and type exact across both
+    centuries; event instants mean ~20 s, max 151 s (a 0.005-magnitude
+    graze); magnitudes within 0.002. Reference fixtures are additionally
+    cross-checked against NASA/Espenak's Five Millennium Canon — which
+    settled two knife-edge 1927/1948 eclipses in NASA's favour where
+    Swiss Ephemeris alone calls them hybrid.
+
 ## [0.3.0] — 2026-07-06
 
 The calendar release: Bikram Sambat, verified and projected.
