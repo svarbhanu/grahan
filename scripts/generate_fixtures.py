@@ -295,6 +295,38 @@ def gen_ascendant() -> None:
     })
 
 
+def gen_true_node() -> None:
+    """True (osculating) lunar node: long-range grid plus a dense two-year
+    run so the ±1.7 deg, ~173-day wobble around the mean node is sampled
+    across its full phase."""
+    start = swe.julday(1900, 1, 1, 0.0)
+    jds = (
+        [start + i * 624.37 for i in range(117)]
+        + [swe.julday(2025, 1, 1, 0.0) + i * 18.31 for i in range(40)]
+        + [J2000_JD, FOUNDER_JD, RAHU_KAAL_JD]
+    )
+    data = []
+    for jd in jds:
+        xx, _ = swe.calc_ut(jd, swe.TRUE_NODE, FLAGS)
+        mean_xx, _ = swe.calc_ut(jd, swe.MEAN_NODE, FLAGS)
+        data.append({
+            "jdUt": round(jd, 8),
+            "utc": utc_iso(jd),
+            "trueNode": round(norm360(xx[0]), 6),
+            "speed": round(xx[3], 6),
+            "meanNode": round(norm360(mean_xx[0]), 6),
+        })
+    write_json(CORE_FIXTURES / "true-node.json", {
+        "source": SOURCE,
+        "parameters": {
+            "count": len(data),
+            "frame": "geocentric ecliptic-of-date, true equinox, tropical, degrees; "
+                     "speed in deg/day (positive during the node's brief direct arcs)",
+        },
+        "data": data,
+    })
+
+
 def gen_ayanamsa() -> None:
     jds = [swe.julday(year, 1, 1, 0.0) for year in range(1900, 2100, 5)] + [FOUNDER_JD]
     data = [
@@ -420,6 +452,7 @@ def main() -> None:
     gen_planets()
     gen_ascendant()
     gen_sunrise()
+    gen_true_node()
     gen_ayanamsa()
     gen_panchang_elements()
     gen_founder_chart()
