@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] — 2026-07-06
+
+The day-view release: panchang the way calendars print it.
+
+### Added
+
+- **`@grahan/vedic`**
+  - `panchangAtSunrise()` — label a civil date by its sunrise panchang,
+    with the transition instant of every element ("Tritiya upto 14:37,
+    then Chaturthi"). Each of tithi/nakshatra/yoga/karana returns the
+    **ordered list of spans touching the vedic day** (sunrise to next
+    sunrise): kshaya days honestly show three tithis, vriddhi days one
+    span running past the next sunrise. Polar dates without a sunrise
+    use a documented local midnight-to-midnight window.
+  - `tithiEndTime()`, `karanaEndTime()`, `nakshatraEndTime()`,
+    `yogaEndTime()` — the underlying boundary solvers; sidereal
+    boundaries are solved on the sidereal value so they move with the
+    ayanamsa. Measured vs Swiss Ephemeris: max 37.5 s, mean 9.7 s over
+    122 boundaries 1990–2060; span identities verified on 118 day
+    records at four sites including 60°N and a polar one, and
+    spot-checked against drikpanchang.com's published end times.
+  - `kundali({ node: 'true' })` — Rahu/Ketu from the true (osculating)
+    node; its retrograde flag is computed, not assumed (the true node
+    briefly runs direct).
+- **`@grahan/core`**
+  - `trueLunarNode()` — osculating node from the Moon's instantaneous
+    orbit plane (r × v), the same construction Swiss Ephemeris uses:
+    max 66″, mean 15″ vs `swe.TRUE_NODE` over 160 instants.
+  - `nextCrossing()` — the generalized mean-rate boundary solver behind
+    the syzygy finder and the vedic end times; `wrap180()` joins the
+    angle utilities.
+
 ## [0.4.0] — 2026-07-06
 
 The namesake release: ग्रहण (grahan) means eclipse — now it computes them.

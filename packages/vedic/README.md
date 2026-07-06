@@ -2,6 +2,8 @@
 
 The Vedic layer of the [grahan](https://github.com/svarbhanu/grahan) sky
 engine: `panchang()` (tithi, nakshatra, yoga, karana, vaar, Rahu Kaal),
+`panchangAtSunrise()` (the day view: sunrise elements with end times,
+kshaya/vriddhi-honest span lists),
 `kundali()` with whole-sign bhavas and navamsa, SVG chart rendering in the
 North & South Indian styles, Vimshottari dashas, transits, muhurta finding,
 and 36-point gun-milan. Zero dependencies beyond `@grahan/core`.
@@ -20,6 +22,21 @@ p.tithi; // { index: 17, paksha: 'krishna', name: 'Tritiya' }
 p.nakshatra; // { index: 21, name: 'Shravana', pada: 1 }
 p.vaar.vaar; // 'Guruvaar'
 p.rahuKaal; // { start, end } — 13:51–15:35 NPT that Thursday
+```
+
+```ts
+import { panchangAtSunrise } from '@grahan/vedic';
+
+const day = panchangAtSunrise({
+  year: 2026,
+  month: 7,
+  day: 2, // a civil date, not an instant
+  latitude: 27.7172,
+  longitude: 85.324,
+  timezone: 'Asia/Kathmandu',
+});
+day.tithi[0].name; // 'Dwitiya' — the day's label
+day.tithi[0].endsAt; // 'upto 09:53' NPT, then Tritiya
 ```
 
 ```ts

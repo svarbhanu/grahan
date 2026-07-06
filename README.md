@@ -119,13 +119,52 @@ circumstances report the **visible** maximum: if the geometric peak is
 below the horizon, you get the sunrise/sunset moment instead, matching
 NASA-style local tables.
 
+### The day view (v0.5) — panchang the way calendars print it
+
+`panchang()` answers "what is the sky now?"; `panchangAtSunrise()` answers
+what a printed panchang answers: label a civil date by its sunrise
+elements, with the instant each one ends:
+
+```ts
+import { panchangAtSunrise } from '@grahan/vedic';
+
+const day = panchangAtSunrise({
+  year: 2026,
+  month: 7,
+  day: 2, // the civil date — no instant needed
+  latitude: 27.7172,
+  longitude: 85.324,
+  timezone: 'Asia/Kathmandu',
+});
+
+day.vaar.name; // 'Thursday'
+day.tithi[0].name; // 'Dwitiya' (krishna) — the day's label
+day.tithi[0].endsAt; // 2026-07-02T04:08:19Z — "upto 09:53" NPT
+day.tithi[1].name; // 'Tritiya' — what the next day will be labelled
+day.nakshatra[0]; // Uttara Ashadha pada 4, upto 09:42 NPT
+day.karana.map((k) => k.name); // ['Gara', 'Vanija', 'Vishti']
+```
+
+Each element is an **ordered list of spans touching the vedic day**
+(sunrise to next sunrise) — never a single squashed value. On a kshaya
+day the skipped tithi appears as a middle span that begins and ends
+between the two sunrises; on a vriddhi day one span runs past the next
+sunrise. Polar dates without a sunrise fall back to a local
+midnight-to-midnight window with the `daylight` flag set. The raw end-time
+solvers (`tithiEndTime`, `nakshatraEndTime`, `yogaEndTime`,
+`karanaEndTime`) are exported too.
+
+Rahu/Ketu can now follow the **true (osculating) node** instead of the
+mean node — `kundali({ ..., node: 'true' })` — and its retrograde flag is
+computed, not assumed (the true node briefly runs direct).
+
 ## Packages
 
-| Package             | What it does                                                                                                                                                                 |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `@grahan/core`      | Secular astronomy: julian day, ΔT, apparent Sun/Moon/planets, mean lunar node, sidereal time, ascendant, sunrise/sunset, moon phase, lunar & solar eclipses (global + local) |
-| `@grahan/vedic`     | Vedic layer on core: `panchang()`, `kundali()` with navamsa + SVG charts, Vimshottari dashas, transits, muhurta, gun-milan                                                   |
-| `@grahan/calendars` | World calendars, Bikram Sambat first: BS ↔ AD conversion (1975–2200 BS, verified tables + Surya Siddhanta projection), `todayBs()`                                           |
+| Package             | What it does                                                                                                                                                                        |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@grahan/core`      | Secular astronomy: julian day, ΔT, apparent Sun/Moon/planets, mean & true lunar node, sidereal time, ascendant, sunrise/sunset, moon phase, lunar & solar eclipses (global + local) |
+| `@grahan/vedic`     | Vedic layer on core: `panchang()`, `panchangAtSunrise()` with element end times, `kundali()` with navamsa + SVG charts, Vimshottari dashas, transits, muhurta, gun-milan            |
+| `@grahan/calendars` | World calendars, Bikram Sambat first: BS ↔ AD conversion (1975–2200 BS, verified tables + Surya Siddhanta projection), `todayBs()`                                                  |
 
 More layers (Hijri, Hebrew, prayer times, tropical charts) are planned on
 the same core.
@@ -147,11 +186,13 @@ itself is never used at runtime — it is AGPL; grahan is MIT).
 | Lahiri ayanamsa    | —       | max 0.002″ (41 epochs)                                                                             |
 | Eclipse times      | ±2½ min | detection & type exact on all 909 events; instants mean ~20 s, max 151 s (a 0.005-magnitude graze) |
 | Eclipse magnitudes | —       | ≤ 0.002 (lunar ≤ 0.0015); fixtures cross-checked against NASA/Espenak's canon                      |
+| Panchang end times | ±1 min  | max 37.5 s, mean 9.7 s (122 boundaries, 1990–2060); spot-checked against drikpanchang.com          |
+| True lunar node    | ±0.03°  | max 66″, mean 15″ (160 instants — the Moon series' own error carried into the osculating plane)    |
 
 **Limits, stated plainly:** ΔT model is fit for 1800–2150 (degrades outside);
 ayanamsa is verified for 1900–2100; timezone conversion supports years
-100–9999 CE at whole-second precision; panchang elements are reported for
-the queried instant (boundary-crossing timestamps are planned post-v0.1);
+100–9999 CE at whole-second precision; `panchang()` reports elements at the
+queried instant while `panchangAtSunrise()` carries the transition times;
 the ascendant is valid for |latitude| ≲ 66°; gun-milan follows the most
 widely published classical tables — regional scoring variants exist and are
 documented in the module; sub-0.02-magnitude grazing eclipses have
