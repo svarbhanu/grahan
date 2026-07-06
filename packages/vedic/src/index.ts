@@ -1,7 +1,9 @@
 /**
- * @grahan/vedic — the Vedic layer on the grahan sky engine: Lahiri
- * ayanamsa, panchang elements (tithi, nakshatra, yoga, karana, vaar),
- * and Rahu Kaal. Pure functions over @grahan/core's positions.
+ * The Vedic layer on the grahan sky engine: Lahiri ayanamsa, panchang
+ * elements (tithi, nakshatra, yoga, karana, vaar), Rahu Kaal, kundali,
+ * dashas, and muhurta. Pure functions over @grahan/core's positions.
+ *
+ * @module @grahan/vedic
  */
 
 export * from './panchang.js';

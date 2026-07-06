@@ -1,0 +1,20 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "name": "grahan — the open-source sky engine",
+  "entryPoints": [
+    "packages/core/src/index.ts",
+    "packages/vedic/src/index.ts",
+    "packages/calendars/src/index.ts"
+  ],
+  "tsconfig": "tsconfig.typedoc.json",
+  "out": "docs-dist",
+  "readme": "README.md",
+  "includeVersion": false,
+  "excludeInternal": true,
+  "excludePrivate": true,
+  "githubPages": true,
+  "navigationLinks": {
+    "GitHub": "https://github.com/svarbhanu/grahan",
+    "npm": "https://www.npmjs.com/org/grahan"
+  }
+}

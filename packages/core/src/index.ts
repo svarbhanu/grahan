@@ -1,8 +1,10 @@
 /**
- * @grahan/core — astronomy-grade sky calculations.
+ * Astronomy-grade sky calculations.
  *
  * All internal math runs on UTC Julian days; IANA timezone helpers exist
  * only at the API boundary. Zero runtime dependencies.
+ *
+ * @module @grahan/core
  */
 
 export const CORE_VERSION = '0.0.0';
