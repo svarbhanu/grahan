@@ -55,6 +55,24 @@ jobs:
           fi
           node scripts/inspect-tarball.mjs tarballs/*.tgz
 
+      - name: Preflight - every package must pass the OIDC exchange before any publishes
+        run: |
+          oidc=$(curl -sf -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=npm%3Aregistry.npmjs.org" | jq -r .value)
+          failed=0
+          for pkg in @grahan/core @grahan/calendars @grahan/vedic; do
+            enc=$(jq -rn --arg p "$pkg" '$p|@uri')
+            code=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+              -H "Authorization: Bearer $oidc" \
+              "https://registry.npmjs.org/-/npm/v1/oidc/token/exchange/package/$enc")
+            echo "$pkg: exchange HTTP $code"
+            if [ "$code" != "200" ] && [ "$code" != "201" ]; then failed=1; fi
+          done
+          if [ "$failed" = "1" ]; then
+            echo "::error::A package is missing its npm Trusted Publisher config - refusing to publish a partial release."
+            exit 1
+          fi
+
       - name: Publish (dependency order; dry-run unless a v* tag triggered this)
         env:
           NPM_CONFIG_LOGLEVEL: verbose # surfaces the OIDC exchange result
