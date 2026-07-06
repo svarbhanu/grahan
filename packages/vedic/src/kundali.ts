@@ -15,12 +15,17 @@ import {
   normalizeDegrees,
   planetPosition,
   sunPosition,
+  trueLunarNode,
+  wrap180,
   type Planet,
 } from '@grahan/core';
 import { lahiriAyanamsa, siderealLongitude } from './ayanamsa.js';
 import { nakshatra, type Nakshatra } from './nakshatra.js';
 import { navamsaRashi } from './navamsa.js';
 import { GRAHA_ORDER, RASHI_NAMES, type Graha } from './names.js';
+
+/** Which lunar node stands in for Rahu/Ketu. */
+export type NodeKind = 'mean' | 'true';
 
 export interface KundaliOptions {
   /** The exact birth instant. */
@@ -29,6 +34,11 @@ export interface KundaliOptions {
   latitude: number;
   /** Degrees east-positive. */
   longitude: number;
+  /**
+   * Rahu/Ketu from the mean node (default, smooth regression) or the
+   * true osculating node (wobbles ±1.7° around it, briefly direct).
+   */
+  node?: NodeKind;
 }
 
 export interface RashiPosition {
@@ -46,7 +56,10 @@ export interface RashiPosition {
 
 export interface GrahaPosition extends RashiPosition {
   graha: Graha;
-  /** Apparent backwards motion; always true for Rahu/Ketu (mean node). */
+  /**
+   * Apparent backwards motion. Always true for the mean node's
+   * Rahu/Ketu; the true node runs direct for short stretches.
+   */
   retrograde: boolean;
   /** Whole-sign house 1–12, counted from the lagna's rashi. */
   bhava: number;
@@ -96,7 +109,10 @@ export interface GrahaLongitude {
  * // { graha: 'moon', longitude: ≈127.20, retrograde: false }
  * ```
  */
-export function grahaSiderealPositions(jdUt: number): GrahaLongitude[] {
+export function grahaSiderealPositions(
+  jdUt: number,
+  node: NodeKind = 'mean',
+): GrahaLongitude[] {
   const sidereal = (tropical: number): number =>
     siderealLongitude(tropical, jdUt);
   const positions = new Map<Graha, GrahaLongitude>();
@@ -118,17 +134,20 @@ export function grahaSiderealPositions(jdUt: number): GrahaLongitude[] {
       retrograde: position.retrograde,
     });
   }
-  const rahu = meanLunarNode(jdUt);
-  // The mean node regresses ~3′/day, so Rahu/Ketu are always retrograde.
+  const rahu = node === 'true' ? trueLunarNode(jdUt) : meanLunarNode(jdUt);
+  // The mean node regresses ~3′/day, so it is always retrograde; the
+  // true node has to be checked — it briefly runs direct.
+  const nodeRetrograde =
+    node === 'true' ? wrap180(trueLunarNode(jdUt + 0.5) - rahu) < 0 : true;
   positions.set('rahu', {
     graha: 'rahu',
     longitude: sidereal(rahu),
-    retrograde: true,
+    retrograde: nodeRetrograde,
   });
   positions.set('ketu', {
     graha: 'ketu',
     longitude: sidereal(rahu + 180),
-    retrograde: true,
+    retrograde: nodeRetrograde,
   });
   return GRAHA_ORDER.map((graha) => {
     const value = positions.get(graha);
@@ -165,7 +184,7 @@ function rashiPosition(longitude: number): Omit<RashiPosition, 'nakshatra'> {
  * ```
  */
 export function kundali(options: KundaliOptions): Kundali {
-  const { date, latitude, longitude } = options;
+  const { date, latitude, longitude, node = 'mean' } = options;
   const jdUt = julianDayFromDate(date);
   const ayanamsa = lahiriAyanamsa(jdUt);
 
@@ -178,7 +197,7 @@ export function kundali(options: KundaliOptions): Kundali {
     nakshatra: nakshatra(lagnaLongitude),
   };
 
-  const grahas: GrahaPosition[] = grahaSiderealPositions(jdUt).map(
+  const grahas: GrahaPosition[] = grahaSiderealPositions(jdUt, node).map(
     (position) => {
       const base = rashiPosition(position.longitude);
       return {

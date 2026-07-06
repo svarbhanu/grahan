@@ -1,7 +1,18 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { dateFromJulianDay } from '@grahan/core';
-import { kundali, GRAHA_ORDER, type Graha } from '../src/index.js';
+import {
+  dateFromJulianDay,
+  julianDayFromDate,
+  normalizeDegrees,
+  trueLunarNode,
+  wrap180,
+} from '@grahan/core';
+import {
+  kundali,
+  siderealLongitude,
+  GRAHA_ORDER,
+  type Graha,
+} from '../src/index.js';
 import { angleDiff, errorStats, reportStats } from './helpers/stats.js';
 
 interface ChartRow {
@@ -133,5 +144,33 @@ describe('kundali founder acceptance (1993-08-18 11:00 NPT, Birgunj)', () => {
     expect(graha('venus').bhava).toBe(9); // Mithuna is 9th
     expect(graha('saturn').bhava).toBe(5); // Kumbha is 5th
     expect(graha('rahu').bhava).toBe(2); // Vrishchika is 2nd
+  });
+
+  it("node: 'true' swaps in the osculating Rahu/Ketu, default stays mean", () => {
+    const jdUt = julianDayFromDate(new Date('1993-08-18T05:15:00Z'));
+    const trueChart = kundali({
+      date: new Date('1993-08-18T05:15:00Z'),
+      latitude: 27.0104,
+      longitude: 84.8821,
+      node: 'true',
+    });
+    const trueRahu = trueChart.grahas.find((g) => g.graha === 'rahu');
+    const trueKetu = trueChart.grahas.find((g) => g.graha === 'ketu');
+    const expected = siderealLongitude(trueLunarNode(jdUt), jdUt);
+    expect(trueRahu?.longitude).toBeCloseTo(expected, 9);
+    expect(trueKetu?.longitude).toBeCloseTo(
+      normalizeDegrees(expected + 180),
+      9,
+    );
+    // The two nodes differ, but never by more than the ±1.9° wobble.
+    const meanRahu = graha('rahu').longitude;
+    const gap = Math.abs(wrap180((trueRahu?.longitude ?? 0) - meanRahu));
+    expect(gap).toBeGreaterThan(0.001);
+    expect(gap).toBeLessThan(2);
+    // Everything that is not a node is untouched by the option.
+    expect(trueChart.grahas.find((g) => g.graha === 'moon')?.longitude).toBe(
+      graha('moon').longitude,
+    );
+    expect(trueChart.lagna.longitude).toBe(chart.lagna.longitude);
   });
 });
