@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] — 2026-07-06
+
+No code changes. First release published **tokenlessly from CI** via
+npm trusted publishing (OIDC) — from this version on, packages carry
+provenance attestations verifiable with `npm audit signatures`.
+
 ## [1.0.0] — 2026-07-06
 
 The stability release. No calculation changed; everything around the
