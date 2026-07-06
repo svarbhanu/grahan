@@ -21,3 +21,5 @@ export * from './bodies/node.js';
 export * from './bodies/planets.js';
 export * from './events/sunrise.js';
 export * from './events/moonphase.js';
+export * from './events/syzygy.js';
+export * from './events/lunar-eclipse.js';
