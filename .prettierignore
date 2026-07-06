@@ -4,3 +4,6 @@ coverage/
 
 # Generated VSOP87 tables (scripts/generate_vsop87_planets.py) - byte-determinism matters more than style
 packages/core/src/bodies/vsop87-*.data.ts
+
+# Generated swisseph fixtures (scripts/generate_*.py) - same reason
+packages/*/fixtures/*.json
