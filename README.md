@@ -18,6 +18,13 @@ npm install @grahan/calendars  # Bikram Sambat ↔ AD (pulls in @grahan/core)
 npm install @grahan/core       # just the astronomy
 ```
 
+The packages are **ESM-only**: use `import` on Node ≥ 18 (that is also
+what bundlers consume); CommonJS `require()` works from Node ≥ 22.
+TypeScript resolves the bundled declarations with `moduleResolution`
+`node16`, `nodenext`, or `bundler`. Bad inputs (latitude 95, an invalid
+`Date`, an unknown IANA zone) throw a `RangeError` naming the offending
+value — nothing silently returns NaN.
+
 ## Example
 
 ```ts
