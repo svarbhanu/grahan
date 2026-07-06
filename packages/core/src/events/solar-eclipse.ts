@@ -9,6 +9,7 @@
  */
 
 import { normalizeDegrees, radToDeg } from '../math/angles.js';
+import { assertFinite } from '../math/validate.js';
 import { goldenMinimize } from '../math/optimize.js';
 import { moonPosition } from '../bodies/moon.js';
 import { greenwichApparentSiderealTime } from '../earth/sidereal.js';
@@ -256,6 +257,7 @@ function eclipseAtConjunction(newMoonJd: number): SolarEclipse | null {
  * ```
  */
 export function nextSolarEclipse(jdUt: number): SolarEclipse {
+  assertFinite(jdUt, 'jdUt');
   let t = jdUt;
   for (let i = 0; i < 250; i++) {
     const newMoon = nextNewMoon(t);

@@ -9,6 +9,8 @@
  */
 
 import {
+  assertLatitude,
+  assertLongitude,
   julianDayFromDate,
   moonPhase,
   moonPosition,
@@ -70,6 +72,8 @@ export interface Panchang {
  */
 export function panchang(options: PanchangOptions): Panchang {
   const { date, latitude, longitude, timezone } = options;
+  assertLatitude(latitude);
+  assertLongitude(longitude);
   const jdUt = julianDayFromDate(date);
 
   const sunLongitude = sunPosition(jdUt).apparentLongitude;

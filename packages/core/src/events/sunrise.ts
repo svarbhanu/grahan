@@ -9,6 +9,11 @@
  */
 
 import { degToRad, radToDeg } from '../math/angles.js';
+import {
+  assertCivilDate,
+  assertLatitude,
+  assertLongitude,
+} from '../math/validate.js';
 import { dateFromJulianDay, julianDayFromDate } from '../time/julian.js';
 import { dateFromZonedTime } from '../time/timezone.js';
 import { sunPosition } from '../bodies/sun.js';
@@ -117,6 +122,8 @@ function sunAltitude(
 /**
  * Sunrise and sunset for a local calendar date at a location.
  *
+ * @throws RangeError on an impossible civil date, out-of-range
+ *   latitude/longitude, or (from `Intl`) an unknown timezone name
  * @example
  * ```ts
  * sunriseSunset({
@@ -128,6 +135,9 @@ function sunAltitude(
  */
 export function sunriseSunset(options: SunriseOptions): SunDayEvents {
   const { year, month, day, latitude, longitude, timezone } = options;
+  assertCivilDate(year, month, day);
+  assertLatitude(latitude);
+  assertLongitude(longitude);
   const jdStart = julianDayFromDate(
     dateFromZonedTime(
       { year, month, day, hour: 0, minute: 0, second: 0 },

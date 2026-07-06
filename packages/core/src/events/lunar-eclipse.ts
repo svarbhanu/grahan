@@ -5,6 +5,7 @@
  */
 
 import { degToRad, radToDeg } from '../math/angles.js';
+import { assertFinite } from '../math/validate.js';
 import { goldenMinimize } from '../math/optimize.js';
 import { moonPosition } from '../bodies/moon.js';
 import { sunPosition } from '../bodies/sun.js';
@@ -203,6 +204,7 @@ function eclipseAtOpposition(fullMoonJd: number): LunarEclipse | null {
  * ```
  */
 export function nextLunarEclipse(jdUt: number): LunarEclipse {
+  assertFinite(jdUt, 'jdUt');
   let t = jdUt;
   for (let i = 0; i < 250; i++) {
     const fullMoon = nextFullMoon(t);

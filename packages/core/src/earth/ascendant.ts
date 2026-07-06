@@ -8,12 +8,18 @@
  */
 
 import { degToRad, normalizeDegrees, radToDeg } from '../math/angles.js';
+import {
+  assertFinite,
+  assertLatitude,
+  assertLongitude,
+} from '../math/validate.js';
 import { trueObliquity } from './nutation.js';
 import { localSiderealTime } from './sidereal.js';
 
 /**
  * Tropical ecliptic longitude rising in the east, degrees [0, 360).
  *
+ * @throws RangeError on a non-finite jdUt or out-of-range latitude/longitude
  * @example
  * ```ts
  * ascendant(2449217.71875, 27.0104, 84.8821);
@@ -25,6 +31,9 @@ export function ascendant(
   latitude: number,
   longitude: number,
 ): number {
+  assertFinite(jdUt, 'jdUt');
+  assertLatitude(latitude);
+  assertLongitude(longitude);
   const theta = degToRad(localSiderealTime(jdUt, longitude));
   const eps = degToRad(trueObliquity(jdUt));
   const phi = degToRad(latitude);

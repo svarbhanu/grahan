@@ -6,6 +6,11 @@
  */
 
 import { degToRad } from '../math/angles.js';
+import {
+  assertFinite,
+  assertLatitude,
+  assertLongitude,
+} from '../math/validate.js';
 import { goldenMinimize } from '../math/optimize.js';
 import { greenwichApparentSiderealTime } from '../earth/sidereal.js';
 import { nextNewMoon } from './syzygy.js';
@@ -283,6 +288,9 @@ export function nextSolarEclipseAt(
   jdUt: number,
   observer: Observer,
 ): LocalSolarEclipse {
+  assertFinite(jdUt, 'jdUt');
+  assertLatitude(observer.latitude);
+  assertLongitude(observer.longitude);
   let t = jdUt;
   for (let i = 0; i < 1000; i++) {
     const newMoon = nextNewMoon(t);

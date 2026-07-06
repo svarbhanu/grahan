@@ -6,6 +6,8 @@
  * so that calendars and timezones stay out of the inner loops.
  */
 
+import { assertValidDate } from '../math/validate.js';
+
 /** JD of the Unix epoch, 1970-01-01T00:00:00Z. */
 const UNIX_EPOCH_JD = 2440587.5;
 
@@ -30,12 +32,14 @@ export interface CalendarDate {
 /**
  * Julian day of a JavaScript `Date` (which is always an instant in UTC).
  *
+ * @throws RangeError if `date` is not a valid Date (e.g. `new Date(NaN)`)
  * @example
  * ```ts
  * julianDayFromDate(new Date(Date.UTC(2000, 0, 1, 12))); // 2451545 (J2000.0)
  * ```
  */
 export function julianDayFromDate(date: Date): number {
+  assertValidDate(date);
   return date.getTime() / MS_PER_DAY + UNIX_EPOCH_JD;
 }
 

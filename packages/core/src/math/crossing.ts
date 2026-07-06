@@ -6,6 +6,7 @@
  */
 
 import { normalizeDegrees, wrap180 } from './angles.js';
+import { assertFinite } from './validate.js';
 
 /**
  * First instant at or after `jdUtStart` when `value` reaches
@@ -40,6 +41,9 @@ export function nextCrossing(
   targetDegrees: number,
   jdUtStart: number,
 ): number {
+  assertFinite(meanRatePerDay, 'meanRatePerDay');
+  assertFinite(targetDegrees, 'targetDegrees');
+  assertFinite(jdUtStart, 'jdUtStart');
   // First guess: advance at the mean rate to the next crossing.
   let t =
     jdUtStart +

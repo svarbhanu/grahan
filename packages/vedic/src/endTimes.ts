@@ -8,6 +8,7 @@
  */
 
 import {
+  assertFinite,
   moonPosition,
   nextCrossing,
   normalizeDegrees,
@@ -51,6 +52,7 @@ function nextBoundary(
   meanRatePerDay: number,
   jdUt: number,
 ): number {
+  assertFinite(jdUt, 'jdUt');
   const target = normalizeDegrees(
     (Math.floor(value(jdUt) / widthDegrees) + 1) * widthDegrees,
   );

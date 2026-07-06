@@ -141,6 +141,7 @@ export function panchangAtSunrise(
   options: PanchangAtSunriseOptions,
 ): PanchangAtSunrise {
   const { year, month, day, latitude, longitude, timezone } = options;
+  // sunriseSunset validates the civil date, latitude, and longitude.
   const events = sunriseSunset({
     year,
     month,

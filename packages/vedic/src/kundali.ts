@@ -9,6 +9,8 @@
 
 import {
   ascendant,
+  assertLatitude,
+  assertLongitude,
   julianDayFromDate,
   meanLunarNode,
   moonPosition,
@@ -185,6 +187,8 @@ function rashiPosition(longitude: number): Omit<RashiPosition, 'nakshatra'> {
  */
 export function kundali(options: KundaliOptions): Kundali {
   const { date, latitude, longitude, node = 'mean' } = options;
+  assertLatitude(latitude);
+  assertLongitude(longitude);
   const jdUt = julianDayFromDate(date);
   const ayanamsa = lahiriAyanamsa(jdUt);
 
