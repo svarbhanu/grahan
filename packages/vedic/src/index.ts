@@ -5,6 +5,7 @@
  */
 
 export * from './panchang.js';
+export * from './panchangAtSunrise.js';
 export * from './kundali.js';
 export * from './navamsa.js';
 export * from './dasha.js';
