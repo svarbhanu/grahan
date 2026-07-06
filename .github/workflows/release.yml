@@ -56,6 +56,8 @@ jobs:
           node scripts/inspect-tarball.mjs tarballs/*.tgz
 
       - name: Publish (dependency order; dry-run unless a v* tag triggered this)
+        env:
+          NPM_CONFIG_LOGLEVEL: verbose # surfaces the OIDC exchange result
         run: |
           if [ "${{ github.ref_type }}" = "tag" ]; then
             FLAGS="--access public"
