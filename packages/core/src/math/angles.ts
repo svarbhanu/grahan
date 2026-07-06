@@ -16,6 +16,20 @@ export function normalizeDegrees(degrees: number): number {
 }
 
 /**
+ * Reduce an angle in degrees to the range (-180, 180], the signed
+ * distance from zero. Useful for "how far past the target" corrections.
+ *
+ * @example
+ * ```ts
+ * wrap180(350); // -10
+ * ```
+ */
+export function wrap180(degrees: number): number {
+  const d = normalizeDegrees(degrees);
+  return d > 180 ? d - 360 : d;
+}
+
+/**
  * Degrees to radians.
  *
  * @example

@@ -8,6 +8,7 @@
 export const CORE_VERSION = '0.0.0';
 
 export * from './math/angles.js';
+export * from './math/crossing.js';
 export * from './time/julian.js';
 export * from './time/deltaT.js';
 export * from './time/timezone.js';

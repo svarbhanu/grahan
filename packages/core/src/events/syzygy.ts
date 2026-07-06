@@ -5,17 +5,12 @@
  */
 
 import { normalizeDegrees } from '../math/angles.js';
+import { nextCrossing } from '../math/crossing.js';
 import { moonPosition } from '../bodies/moon.js';
 import { sunPosition } from '../bodies/sun.js';
 
 /** Mean synodic elongation rate, degrees per day (Meeus ch. 49). */
 const MEAN_ELONGATION_RATE = 360 / 29.530588861;
-
-/** Map an angle to the range (-180, 180]. */
-function wrap180(degrees: number): number {
-  const d = normalizeDegrees(degrees);
-  return d > 180 ? d - 360 : d;
-}
 
 function elongation(jdUt: number): number {
   return normalizeDegrees(
@@ -34,19 +29,8 @@ function elongation(jdUt: number): number {
  * ```
  */
 export function nextSyzygy(jdUt: number, targetDegrees: number): number {
-  // First guess: advance at the mean rate to the next crossing.
-  let t =
-    jdUt +
-    normalizeDegrees(targetDegrees - elongation(jdUt)) / MEAN_ELONGATION_RATE;
-  // Refine at the mean rate; the true rate stays within ±14% of it, so
-  // the correction shrinks geometrically.
-  for (let i = 0; i < 12; i++) {
-    const correction =
-      wrap180(targetDegrees - elongation(t)) / MEAN_ELONGATION_RATE;
-    t += correction;
-    if (Math.abs(correction) < 1e-8) break; // < 1 ms
-  }
-  return t;
+  // The true elongation rate stays within ±14% of the mean rate.
+  return nextCrossing(elongation, MEAN_ELONGATION_RATE, targetDegrees, jdUt);
 }
 
 /**
