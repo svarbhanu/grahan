@@ -1,6 +1,6 @@
-# grahan — the open-source sky engine
+# grahan -> the open-source sky engine
 
-> ग्रहण (grahan) — "eclipse"
+> ग्रहण (grahan) -> "eclipse"
 
 Astronomy-grade sky calculations with cultural intelligence. Sun and Moon
 positions, sunrise/sunset, moon phases — and cultural layers computed from
@@ -10,7 +10,7 @@ runs in Node ≥ 18, browsers, and edge runtimes.
 > 📖 [How it was built](https://dev.to/svarbhanu/i-built-a-zero-dependency-sky-engine-in-typescript-verified-to-46-arcseconds-317h) —
 > the verification method and the bugs the Arctic fixtures caught.
 >
-> 📚 [API reference](https://svarbhanu.github.io/grahan/) — every public
+> 📚 [API reference](https://svarbhanu.github.io/grahan/) - every public
 > function of all three packages, with runnable examples.
 
 ## Install
